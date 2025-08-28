@@ -30,6 +30,8 @@
     .tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
     .tier{display:flex;flex-direction:column;min-width:0}
     .tier h3 { margin:0 0 4px; font-size:18px }
+    .full { grid-column: 1 / -1; }
+    .btn-block { width: 100%; display: inline-block; text-align: center; }
     .ul { margin:8px 0 0; padding-left:18px }
     .grid-3 { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px }
     hr { border:0; border-top:1px solid var(--line); margin: 28px 0 }
@@ -55,45 +57,46 @@
       </div>
 
       <!-- CTA FORM (Netlify Forms) -->
-      <div class="card">
-        <form name="lead" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
-          <input type="hidden" name="form-name" value="lead" />
-          <p hidden><label>Don’t fill this out <input name="bot-field" /></label></p>
+<div class="card">
+  <form name="lead" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+    <input type="hidden" name="form-name" value="lead" />
+    <p hidden><label>Don’t fill this out <input name="bot-field" /></label></p>
 
-          <div class="row">
-            <div>
-              <label for="fname">First name</label>
-              <input id="fname" type="text" name="first_name" autocomplete="given-name" />
-            </div>
-            <div>
-              <label for="lname">Last name</label>
-              <input id="lname" type="text" name="last_name" autocomplete="family-name" />
-            </div>
-          </div>
-
-          <div class="row">
-            <div>
-              <label for="company">Company</label>
-              <input id="company" type="text" name="company" autocomplete="organization" />
-            </div>
-            <div>
-              <label for="email">email</label>
-              <input id="email" type="email" name="email" required autocomplete="email" />
-            </div>
-          </div>
-
-          <div class="row">
-            <div>
-
-          <label for="msg">Anything else we should know? (optional)</label>
-          <textarea id="msg" name="message" placeholder="Link to your webinar..."></textarea>
-          <div class="row">
-            <div>
-          <input type="hidden" name="source" value="leadpath-landing-v1" />
-          <button class="btn" type="submit">Get More Info</button>
-        </form>
+    <div class="row">
+      <div>
+        <label for="fname">First name</label>
+        <input id="fname" type="text" name="first_name" autocomplete="given-name" />
       </div>
-    </section>
+      <div>
+        <label for="lname">Last name</label>
+        <input id="lname" type="text" name="last_name" autocomplete="family-name" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="company">Company</label>
+        <input id="company" type="text" name="company" autocomplete="organization" />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required autocomplete="email" />
+      </div>
+    </div>
+
+    <!-- Full-width message field -->
+    <div class="full">
+      <label for="msg">Anything else we should know? (optional)</label>
+      <textarea id="msg" name="message" placeholder="Link to your webinar, brand notes, goals…"></textarea>
+    </div>
+
+    <input type="hidden" name="source" value="leadpath-landing-v1" />
+
+    <!-- Full-width submit button -->
+    <button class="btn btn-block" type="submit">Get more info</button>
+  </form>
+</div>
+
 
     <!-- VALUE PROPS -->
     <section class="section">
