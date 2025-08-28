@@ -27,7 +27,8 @@
     .btn { cursor:pointer; border:0; border-radius:10px; padding:12px 14px; font-weight:700; color:#071324; background:linear-gradient(180deg, #8be8ff, #5dd4ff) }
     .hint { font-size:12px; color:var(--muted) }
     .section { margin-top:40px }
-    .tiers { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px }
+    .tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .tier{display:flex;flex-direction:column;min-width:0}
     .tier h3 { margin:0 0 4px; font-size:18px }
     .ul { margin:8px 0 0; padding-left:18px }
     .grid-3 { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px }
@@ -112,36 +113,40 @@
     </section>
 
     <!-- TIERS (pilot anchors) -->
-    <section class="section">
-      <h2 style="margin:0 0 8px">Packages:</h2>
-      <div class="tiers">
-        <div class="card tier">
-          <h3>Convert</h3>
-          <p class="lead">12–24 page eBook from 1 webinar.</p>
-          <ul class="ul">
-            <li>Visuals, Brand-Matched</li>
-          </ul>
-          <p><strong>$1,200 CAD</p>
-        </div>
-        <div class="card tier">
-          <h3>Launch</h3>
-          <p class="lead">2 x 12-24 page eBooks </p>
-          <ul class="ul">
-            <li> 2 Webinars converted to eBooks - Brand Matched with Visuals</li>
-          </ul>
-          <p><strong>$2,000 CAD</p>
-        </div>
-        <div class="card tier">
-          <h3>Scale</h3>
-          <p class="lead">Monthly - HERO PACKAGE</p>
-          <ul class="ul">
-            <li>Up to 5 Webinars per Month converted into 12-24 page eBooks</li>
-          </ul>
-          <p><strong>From $4,300 CAD</p>
-        </div>
-      </div>
-      <div class="hint" style="margin-top:6px"></div>
-    </section>
+<section class="section">
+  <h2 style="margin:0 0 8px">Packages:</h2>
+
+  <div class="tiers">
+    <div class="card tier">
+      <h3>Convert</h3>
+      <p class="lead">12–24 page eBook from 1 webinar.</p>
+      <ul class="ul">
+        <li>Visuals, brand-matched</li>
+      </ul>
+      <p><strong>$1,200 CAD</strong></p>
+    </div>
+
+    <div class="card tier">
+      <h3>Launch</h3>
+      <p class="lead">2 × 12–24 page eBooks</p>
+      <ul class="ul">
+        <li>2 webinars converted to eBooks — brand-matched with visuals</li>
+      </ul>
+      <p><strong>$2,000 CAD</strong></p>
+    </div>
+
+    <div class="card tier">
+      <h3>Scale</h3>
+      <p class="lead">Monthly — HERO PACKAGE</p>
+      <ul class="ul">
+        <li>Up to 5 webinars per month converted into 12–24 page eBooks</li>
+      </ul>
+      <p><strong>From $4,300 CAD</strong></p>
+    </div>
+  </div>
+
+  <div class="hint" style="margin-top:6px"></div>
+</section>
 
     <!-- HOW IT WORKS -->
     <section class="section">
@@ -149,7 +154,7 @@
       <div class="grid-3">
         <div class="card"><strong>1) Intake</strong><br/>You send the recording, slides, brand kit, ICP, and CTA</div>
         <div class="card"><strong>2) Build</strong><br/>We build out the Transcript → outline → visuals → layout</div>
-        <div class="card"><strong>3) Deliver</strong><br/>E-book (PDF + source, QA and alignment docs), and a simple reporting/UTM sheet.</div>
+        <div class="card"><strong>3) Deliver</strong><br/>eBook (PDF + source, QA and alignment docs), and a simple reporting/UTM sheet.</div>
       </div>
     </section>
 
