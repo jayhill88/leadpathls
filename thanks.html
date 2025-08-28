@@ -3,19 +3,67 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Thanks — You’re in!</title>
+  <title>Thanks — LeadPath Webinar → E‑book</title>
+  <meta name="description" content="Thanks for your submission. We'll follow up with your proposal and timeline." />
   <style>
-    body { margin:0; min-height:100vh; display:grid; place-items:center; background:#0b1020; color:#e8ecff; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
-    .card { max-width:680px; margin:2rem; padding:2rem; border-radius:16px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); }
-    h1 { margin-top:0; }
-    a { color:#8be8ff; }
+    :root { --bg:#0b1020; --card:#121833; --text:#e8ecff; --muted:#9aa4c7; --line:rgba(255,255,255,0.08); --cta:#8be8ff; }
+    * { box-sizing:border-box }
+    body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--text); background:#0b1020; }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 56px 16px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border:1px solid var(--line); border-radius:16px; padding:20px }
+    h1 { margin:0 0 10px; font-size: clamp(28px, 3.2vw, 44px); line-height:1.1 }
+    p.lead { margin: 0 0 16px; color:var(--muted) }
+    .grid { display:grid; gap:14px; grid-template-columns: 1fr 1fr; }
+    .btns { display:flex; gap:10px; flex-wrap:wrap; margin-top:12px }
+    .btn { display:inline-block; text-decoration:none; font-weight:700; color:#071324; background:linear-gradient(180deg,#8be8ff,#5dd4ff); padding:12px 14px; border-radius:10px }
+    .link { color: var(--cta); text-decoration: none; }
+    .hint { font-size:13px; color:var(--muted) }
+    .footer { margin-top: 28px; color:var(--muted); font-size: 13px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap }
+    @media (max-width: 760px){ .grid { grid-template-columns:1fr } }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>You're registered 🎉</h1>
-    <p>We just sent a confirmation email with your webinar link. After the session, we'll deliver the companion e‑book to the same address.</p>
-    <p><a href="/">Back to site</a></p>
+  <div class="wrap">
+    <h1>You're in — thanks!</h1>
+    <p class="lead">We received your details. Next, we’ll review and send a short proposal with timelines. To get a head start, you can share your webinar assets below.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3 style="margin:0 0 6px">What happens next</h3>
+        <ol style="margin:6px 0 0; padding-left:18px">
+          <li>Check your inbox for our confirmation (subject: <em>LeadPath — Webinar → E‑book</em>).</li>
+          <li>Reply with your webinar link/recording, slides, and brand kit (if available).</li>
+          <li>Receive a proposal &amp; timeline (business-day turnaround).</li>
+        </ol>
+        <div class="hint" style="margin-top:8px">Didn’t see an email? Check spam/promotions or write us at <a class="link" href="mailto:hello@leadpath.ca">hello@leadpath.ca</a>.</div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin:0 0 6px">Optional: 15‑min intake</h3>
+        <p class="lead" style="margin:0 0 8px">Prefer to talk it through? Book a quick intake and we’ll align on ICP, voice, and CTAs.</p>
+        <div class="btns">
+          <!-- Replace # with your Calendly or booking URL -->
+          <a class="btn" href="#" target="_blank" rel="noopener">Book intake call</a>
+          <a class="btn" href="/" >Back to site</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <h3 style="margin:0 0 6px">Quality Proof Kit</h3>
+      <ul style="margin:6px 0 0; padding-left:18px">
+        <li>Content Quality Scorecard &amp; Traceability Map (timestamps ↔ slides).</li>
+        <li>Red‑Pen review artifact and “before → after” appendix.</li>
+        <li>Pilot guarantees: Scorecard rework (&lt;72h), On‑Brand voice pass (48h), Fidelity same‑day correction.</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <div>© <span id="y"></span> LeadPath</div>
+      <div class="hint">We never sell your data. <a class="link" href="/">Privacy</a></div>
+    </div>
   </div>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>

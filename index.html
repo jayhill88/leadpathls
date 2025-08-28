@@ -3,62 +3,191 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Webinar → E-book</title>
-  <meta name="description" content="Register for the webinar and receive the companion e-book." />
+  <title>LeadPath — Webinar → E-book</title>
+  <meta name="description" content="We turn your webinars into conversion-ready e-books and launch assets so you capture more qualified conversations without creating new content." />
   <style>
-    body { margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; background:#0b1020; color:#e8ecff; }
-    .wrap { max-width: 720px; margin: 0 auto; padding: 48px 16px; }
-    h1 { margin: 0 0 8px; font-size: 32px; line-height: 1.15; }
-    p.lead { margin: 0 0 24px; color:#9aa4c7; }
-    .card { padding: 16px; border-radius: 12px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
-    form { display:grid; gap:12px; }
-    label { font-weight:600; font-size: 14px; }
-    input[type="text"], input[type="email"] {
-      width:100%; padding: 10px 12px; border-radius: 10px; border:1px solid rgba(255,255,255,0.15);
-      background: rgba(255,255,255,0.06); color:#e8ecff;
+    :root { --bg:#0b1020; --card:#121833; --text:#e8ecff; --muted:#9aa4c7; --line:rgba(255,255,255,0.08); --cta:#8be8ff; }
+    * { box-sizing:border-box }
+    body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--text); background:#0b1020; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 56px 16px; }
+    .hero { display:grid; gap:20px; align-items:start; grid-template-columns: 1.4fr 1fr; }
+    h1 { margin:0 0 8px; font-size: clamp(28px, 3.2vw, 44px); line-height:1.1 }
+    p.lead { margin: 0 0 12px; color:var(--muted) }
+    .badges { display:flex; gap:8px; flex-wrap:wrap; margin: 8px 0 0 }
+    .badge { font-size:13px; color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:6px 10px; background:rgba(255,255,255,0.04) }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border:1px solid var(--line); border-radius:16px; padding:16px }
+    form { display:grid; gap:12px }
+    label { font-weight:600; font-size:14px }
+    input, select, textarea {
+      width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.06); color:var(--text);
     }
-    .row { display:grid; gap:12px; grid-template-columns: 1fr 1fr; }
-    .btn { cursor:pointer; border:0; border-radius:10px; padding:11px 14px; font-weight:700; color:#071324;
-      background: linear-gradient(180deg, #8be8ff, #5dd4ff); }
-    .hint { font-size: 13px; color:#9aa4c7; }
-    .footer { margin-top:24px; font-size: 13px; color:#9aa4c7; }
-    @media (max-width: 640px){ .row { grid-template-columns: 1fr; } }
+    textarea { min-height: 90px; resize: vertical }
+    .row { display:grid; grid-template-columns:1fr 1fr; gap:12px }
+    .btn { cursor:pointer; border:0; border-radius:10px; padding:12px 14px; font-weight:700; color:#071324; background:linear-gradient(180deg, #8be8ff, #5dd4ff) }
+    .hint { font-size:12px; color:var(--muted) }
+    .section { margin-top:40px }
+    .tiers { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px }
+    .tier h3 { margin:0 0 4px; font-size:18px }
+    .ul { margin:8px 0 0; padding-left:18px }
+    .grid-3 { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px }
+    hr { border:0; border-top:1px solid var(--line); margin: 28px 0 }
+    .footer { margin-top: 28px; color:var(--muted); font-size: 13px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap }
+    @media (max-width: 900px){ .hero { grid-template-columns:1fr } .tiers, .grid-3 { grid-template-columns:1fr } }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <h1>Register for the Webinar → Get the E-book</h1>
-    <p class="lead">Enter your details and we’ll email the live link and the companion PDF after the session.</p>
 
-    <div class="card">
-      <!-- Netlify Forms: minimal, reliable -->
-      <form name="lead" method="POST" data-netlify="true" action="/thanks.html">
-        <input type="hidden" name="form-name" value="lead" />
-        <div class="row">
-          <div>
-            <label for="fname">First name</label>
-            <input id="fname" type="text" name="first_name" autocomplete="given-name" />
-          </div>
-          <div>
-            <label for="lname">Last name</label>
-            <input id="lname" type="text" name="last_name" autocomplete="family-name" />
-          </div>
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1>Turn your webinars into conversion-ready e-books</h1>
+        <p class="lead">For 20–500 person B2B teams already running webinars. We transform a recorded session into a polished e-book and launch kit—so you capture more qualified conversations without creating new content.</p>
+        <div class="badges">
+          <span class="badge">5-day turnaround</span>
+          <span class="badge">Done-for-you editorial & design</span>
+          <span class="badge">LinkedIn & email ready</span>
+          <span class="badge">Quality Proof Kit</span>
         </div>
-        <div>
-          <label for="email">Email</label>
-          <input id="email" type="email" name="email" required autocomplete="email" />
-          <div class="hint">We’ll send the webinar link and your e-book here.</div>
+      </div>
+
+      <!-- CTA FORM (Netlify Forms) -->
+      <div class="card">
+        <form name="lead" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+          <input type="hidden" name="form-name" value="lead" />
+          <p hidden><label>Don’t fill this out <input name="bot-field" /></label></p>
+
+          <div class="row">
+            <div>
+              <label for="fname">First name</label>
+              <input id="fname" type="text" name="first_name" autocomplete="given-name" />
+            </div>
+            <div>
+              <label for="lname">Last name</label>
+              <input id="lname" type="text" name="last_name" autocomplete="family-name" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="company">Company</label>
+              <input id="company" type="text" name="company" autocomplete="organization" />
+            </div>
+            <div>
+              <label for="email">Work email</label>
+              <input id="email" type="email" name="email" required autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="site">Company website</label>
+              <input id="site" type="url" name="website" placeholder="https://…" />
+            </div>
+            <div>
+              <label for="tier">What are you interested in?</label>
+              <select id="tier" name="interest">
+                <option value="convert">Convert — E-book from 1 webinar</option>
+                <option value="launch">Launch — E-book + launch kit</option>
+                <option value="scale">Scale — Lead capture & nurture</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="msg">Anything else we should know? (optional)</label>
+          <textarea id="msg" name="message" placeholder="Link to the webinar, brand notes, goals…"></textarea>
+
+          <label><input type="checkbox" name="consent" value="yes" required> I agree to receive the webinar-to-e-book materials and updates.</label>
+          <input type="hidden" name="source" value="leadpath-landing-v1" />
+          <button class="btn" type="submit">Get my proposal & timeline</button>
+          <div class="hint">No spam. Unsubscribe anytime.</div>
+        </form>
+      </div>
+    </section>
+
+    <!-- VALUE PROPS -->
+    <section class="section">
+      <div class="grid-3">
+        <div class="card">
+          <h3>Multiply ROI of webinars</h3>
+          <p class="lead">Turn a single recording into an e-book and social assets your sales team can use immediately.</p>
         </div>
-        <input type="hidden" name="source" value="webinar-ebook-landing" />
-        <button class="btn" type="submit">Reserve my spot</button>
-      </form>
+        <div class="card">
+          <h3>Consistent list growth</h3>
+          <p class="lead">Compliant opt-ins via landing page + nurture copy you can plug into your CRM.</p>
+        </div>
+        <div class="card">
+          <h3>Faster than in-house</h3>
+          <p class="lead">A repeatable editorial/design process with a 5-business-day SLA.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIERS (pilot anchors) -->
+    <section class="section">
+      <h2 style="margin:0 0 8px">Packages (pilot anchors)</h2>
+      <div class="tiers">
+        <div class="card tier">
+          <h3>Convert</h3>
+          <p class="lead">12–24p e-book from 1 webinar.</p>
+          <ul class="ul">
+            <li>6–12 visuals, brand-matched PDF + source</li>
+          </ul>
+          <p><strong>From $1,200 USD</strong> (~$1,650 CAD)</p>
+        </div>
+        <div class="card tier">
+          <h3>Launch</h3>
+          <p class="lead">E-book + launch kit.</p>
+          <ul class="ul">
+            <li>Landing copy, 2 LinkedIn posts, 1 carousel, DM scripts</li>
+          </ul>
+          <p><strong>From $2,400 USD</strong> (~$3,300 CAD)</p>
+        </div>
+        <div class="card tier">
+          <h3>Scale</h3>
+          <p class="lead">Lead capture engine & nurture.</p>
+          <ul class="ul">
+            <li>3–5 nurture emails, reporting template, light automation</li>
+          </ul>
+          <p><strong>From $4,200 USD</strong> (~$5,750 CAD)</p>
+        </div>
+      </div>
+      <div class="hint" style="margin-top:6px">Pilot pricing; final quote depends on complexity and brand requirements.</div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section">
+      <h2 style="margin:0 0 8px">How it works</h2>
+      <div class="grid-3">
+        <div class="card"><strong>1) Intake</strong><br/>You send the recording, slides, brand kit, ICP, and CTA.</div>
+        <div class="card"><strong>2) Build</strong><br/>Transcript → outline → visuals → layout. Landing/DM copy produced in parallel.</div>
+        <div class="card"><strong>3) Deliver</strong><br/>E-book (PDF + source), launch assets, and a simple reporting/UTM sheet.</div>
+      </div>
+    </section>
+
+    <!-- PROOF / GUARANTEES -->
+    <section class="section">
+      <h2 style="margin:0 0 8px">Quality Proof Kit & Guarantees</h2>
+      <div class="card">
+        <ul class="ul">
+          <li>Content Quality Scorecard (0–5 weighted) & Traceability Map (timestamps ↔ slide IDs).</li>
+          <li>Red-Pen review artifact and “before → after” appendix.</li>
+          <li><strong>Pilot guarantees:</strong> Scorecard rework (<72h), On-Brand voice pass (48h), Fidelity same-day correction.</li>
+        </ul>
+        <div class="hint">We preserve fidelity to your source webinar and brand. Accessibility basics included.</div>
+      </div>
+    </section>
+
+    <hr/>
+
+    <div class="footer">
+      <div>© <span id="y"></span> LeadPath</div>
+      <div class="hint">By submitting, you agree to our privacy policy. We never sell your data.</div>
     </div>
-
-    <div class="footer">© <span id="y"></span> Your Company</div>
   </div>
+
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
 
-</body>
-</html>
