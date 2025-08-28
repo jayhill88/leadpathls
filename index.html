@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Webinar → E‑book | Landing</title>
+  <meta name="description" content="Register for the free webinar and get the companion e‑book." />
+  <style>
+    :root { --bg:#0b1020; --card:#111733; --text:#e8ecff; --muted:#9aa4c7; --accent:#5dd4ff; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background: radial-gradient(1200px 600px at 10% -10%, #1a2250, #0b1020); color: var(--text); }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 4rem 1rem; }
+    .hero { display:grid; gap:1rem; align-items:center; grid-template-columns: 1.2fr 1fr; }
+    h1 { font-size: clamp(2rem, 2.5vw + 1rem, 3rem); line-height:1.1; margin:0 0 .5rem; }
+    p.lead { font-size: 1.125rem; color: var(--muted); margin:0 0 1rem; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 1rem; box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
+    form { display: grid; gap: .75rem; }
+    label { font-weight: 600; font-size: .95rem; }
+    input[type="text"], input[type="email"] {
+      width: 100%; padding: .8rem .9rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.06); color: var(--text);
+    }
+    .row { display:grid; gap:.75rem; grid-template-columns: 1fr 1fr; }
+    .hint { font-size: .9rem; color: var(--muted); }
+    .btn { cursor: pointer; border:0; border-radius: 12px; padding: .9rem 1.1rem; font-weight: 700; color:#071324;
+      background: linear-gradient(180deg, #8be8ff, #5dd4ff); box-shadow: 0 8px 24px rgba(93,212,255,.35); }
+    .badges { display:flex; gap:.5rem; flex-wrap:wrap; margin:.75rem 0 0; }
+    .badge { font-size:.8rem; background: rgba(255,255,255,0.06); padding:.4rem .6rem; border:1px solid rgba(255,255,255,0.1); border-radius:999px; color:var(--muted); }
+    .tick { color: var(--accent); margin-right:.35rem; }
+    .footer { margin-top:2rem; font-size:.85rem; color:var(--muted); }
+    @media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div>
+        <h1>Your Webinar Title → Free Companion E‑book</h1>
+        <p class="lead">Host a compelling webinar, and automatically deliver a polished e‑book from the session. Register below to get the live link and your copy.</p>
+        <div class="badges">
+          <span class="badge">Live on Zoom</span>
+          <span class="badge">Recording provided</span>
+          <span class="badge">Bonus: PDF e‑book</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <!-- Netlify Forms-ready signup -->
+        <form name="lead" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+          <input type="hidden" name="form-name" value="lead">
+          <p style="display:none">
+            <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+          </p>
+          <div class="row">
+            <div>
+              <label for="fname">First name</label>
+              <input id="fname" type="text" name="first_name" autocomplete="given-name" />
+            </div>
+            <div>
+              <label for="lname">Last name</label>
+              <input id="lname" type="text" name="last_name" autocomplete="family-name" />
+            </div>
+          </div>
+          <div>
+            <label for="email">Email address</label>
+            <input id="email" type="email" name="email" required autocomplete="email" />
+            <div class="hint">We'll send the webinar link and the e‑book to this email.</div>
+          </div>
+          <div>
+            <label><input type="checkbox" name="consent" value="yes" required> I agree to receive the webinar link and follow‑up materials.</label>
+          </div>
+          <input type="hidden" name="source" value="webinar-ebook-landing">
+          <button class="btn" type="submit">Reserve my spot</button>
+          <div class="hint">No spam. Unsubscribe anytime.</div>
+        </form>
+      </div>
+    </section>
+
+    <section style="margin-top:2rem">
+      <h2>What you’ll learn</h2>
+      <p class="lead">Three practical takeaways you can apply the same day.</p>
+      <ul>
+        <li><span class="tick">✓</span> How to run a high‑signal webinar that converts.</li>
+        <li><span class="tick">✓</span> The exact outline we use to turn a webinar into a high‑quality e‑book.</li>
+        <li><span class="tick">✓</span> Tools and templates to automate 80% of the workflow.</li>
+      </ul>
+    </section>
+
+    <div class="footer">
+      <p>© <span id="y"></span> Your Company. All rights reserved.</p>
+    </div>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
