@@ -22,8 +22,8 @@
   p.lead { margin: 0 0 12px; color: var(--muted) }
   .badges { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 0 }
   .badge { font-size: 13px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 6px 10px; background: rgba(45, 55, 72, 0.05) }
-  .card { background: linear-gradient(180deg, rgba(45, 55, 72, 0.05), rgba(45, 55, 72, 0.02)); border: 1px solid var(--line); border-radius: 16px; padding: 16px }
-  form { display: grid; gap: 12px }
+  .card { background: linear-gradient(180deg, rgba(45, 55, 72, 0.05), rgba(45, 55, 72, 0.02)); border: 1px solid var(--line); border-radius: 16px; padding: 8px }
+  form { display: grid; gap: 6px }
   label { font-weight: 400; font-size: 14px }
   input, select, textarea {
     width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(45, 55, 72, 0.2);
@@ -33,7 +33,7 @@
   .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
   .btn { cursor: pointer; border: 0; border-radius: 10px; padding: 12px 14px; font-weight: 700; color: #FFFFFF; background: linear-gradient(180deg, #F56565, #E53E3E) }
   .hint { font-size: 12px; color: var(--muted) }
-  .section { margin-top: 40px }
+  .section { margin-top: 16px }
   .tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px }
   .tier { display: flex; flex-direction: column; min-width: 0 }
   .tier h3 { margin: 0 0 4px; font-size: 18px }
@@ -41,7 +41,7 @@
   .section { display: block; grid-column: 1 / -1; }
   .btn-block { width: 100%; display: inline-block; text-align: center; }
   .ul { margin: 8px 0 0; padding-left: 18px }
-  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px }
   hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0 }
   .footer { margin-top: 28px; color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap }
   @media (max-width: 900px) { .hero { grid-template-columns: 1fr } .tiers, .grid-3 { grid-template-columns: 1fr } }
@@ -53,16 +53,15 @@
     <!-- HERO -->
     <section class="hero">
       <div>
-        <h1>Turn Webinars into Powerful ebooks</h1>
-        <p class="lead">Branded, Shareable content optimized for impact.</p>
+        <h1>Transform Webinars into Lead Magnets</h1>
+        <p class="lead">Convert your webinars into powerful enhanced ebooks with LeadPath</p>
+        <h3 class="lead">Engaging, Refreshed Content that Drives Leads</h3>
         <div class="badges">
           <span class="badge">Executive Summary</span>
           <span class="badge">Key Message Brief</span>
           <span class="badge">CTA Focused</span>
-          <span class="badge">Your Brand Voice</span>
           <span class="badge">Concise Transcription</span>
           <span class="badge">LinkedIn and email Ready</span>
-          <span class="badge">Created by Humans</span>
         </div>
       </div>
 
@@ -103,7 +102,7 @@
     <input type="hidden" name="source" value="leadpath-landing-v1" />
 
     <!-- Full-width submit button -->
-    <button class="btn btn-block" type="submit">Get Your Webinar → ebook</button>
+    <button class="btn btn-block" type="submit">See a Sample of Our Work</button>
   </form>
 </div>
 
@@ -137,7 +136,7 @@
       <p class="lead">Webinar → Enhanced ebook </p>
       <ul class="ul">
         <li>Brand-matched style and format</li>
-        <li>Enhanced ebook optimized for lead generation</li>
+        <li>Enhanced ebook optimized for lead nurture, including external links to contacts and resources, SEO keywords and CTA's</li>
         <li>Executive Summary Foreword</li>
         <li>Key Messages Brief with Call to Action</li>
         <li>Concise Transcription edited for ebook format</li>
@@ -151,7 +150,8 @@
       <p class="lead">Webinar → Enchanced ebook With Lead Capture &amp; Distribution</p>
       <ul class="ul">
         <li>Convert Package (branded ebook, visuals, CTA's)</li>
-        <li>Mobile friendly landing page for lead capture from X and LinkedIn engagements or ads</li>
+        <li>Enhanced ebook optimized for lead nurture, including external links to contacts and resources, SEO keywords and CTA's</li>
+        <li>Mobile optimized landing page to collect name, email and Company</li>
         <li>Pre-configured templates to share ebooks and sync leads to your CRM</li>
       </ul>
       <p><strong>$1,600 CAD</strong></p>
@@ -161,39 +161,35 @@
       <h3>Scale</h3>
       <p class="lead">Webinar → Enhanced ebook - Monthly</p>
       <ul class="ul">
-        <li>Everything in the Convert Package</li>
+        <li>Everything in the Launch Package</li>
         <li>Up to 4 webinars per month converted to enhanced ebooks</li>
         <li>Discount on webinar conversion. Save 25%</li>
         <li>Dedicated account manager</li>
         <li>Monthly performance metrics</li>
         </ul>
-        <p><strong>Contact Us</strong></p>
-      </div>
+        <p></p><strong>Pricing customized for your exact needs</strong></p>
     </div>
 
     <div class="hint" style="margin-top:6px">*Most webinars are 60 minutes in length, webinars longer than 75 minutes may require additional cost</div>
   </section>
 
     <!-- HOW IT WORKS -->
-    <section class="section">
-      <h2 style="margin:0 0 8px">How it Works:</h2>
-      <div class="grid-3">
-        <div class="card"><strong>1) Intake</strong><br/> <ul><li><span class="lead">Collect webinar recording, slides, brand guidelines, target audience, and desired CTAs</span></li></ul></div>
-        <div class="card"><strong>2) Build</strong><br/> <ul><li><span class="lead">Transcribe webinar, create outline, design branded visuals, and craft ebook layout (16–24 pages)</span></li></ul></div>
-        <div class="card"><strong>3) Deliver</strong><br/> <ul><li><span class="lead">Deliver PDF ebook, source files, mobile-optimized landing page, and X/LinkedIn post templates for lead capture</span></li></ul></div>
-      </div>
-    </section>
+   <section class="section">
+  <h2 style="margin:0 0 8px">How It Works</h2>
+  <div class="card">
+    <p class="lead">We transform your webinar into a powerful lead magnet in three seamless steps. First, we collect your webinar recording, slides, brand guidelines, target audience details, and desired CTAs to align with your goals. Next, our team transcribes the content, creates a structured outline, designs branded visuals, and crafts a 16–24-page enhanced ebook optimized for lead generation with SEO keywords and external links. Finally, we deliver the ebook as a PDF with source files, and for Launch and Scale clients, we provide a mobile-optimized landing page and pre-written X/LinkedIn post templates to capture names, emails, and company details, seamlessly syncing with your CRM.</p>
+  </div>
+</section>
 
     <!-- PROOF / GUARANTEES -->
     <section class="section">
-      <h2 style="margin:0 0 8px">Quality is Paramount, our process includes quality checkpoints to ensure first pass success.</h2>
+      <h2 style="margin:0 0 8px">Quality and Accuracy are paramount, our process includes quality checkpoints to ensure first pass success, however we recognize the need for changes and revisions and will stand behind our work.</h2>
       <div class="card">
         <ul class="ul">
           <li>Content Quality Scorecard & Traceability Map (timestamps ↔ slide IDs).</li>
           <li>Red-Pen review and “Before → After” ensuring no conflicts of messaging, eliminates mis-spoken details, errors, omissions from the webinar or slides </li>
           <li>Guarantees: On-Brand voice and messaging. True alignment with original content</li>
         </ul>
-        <div class="hint">We will preserve fidelity to your source webinar and brand.</div>
       </div>
     </section>
 
@@ -202,10 +198,9 @@
       <h2 style="margin:0 0 8px">Who Are We?</h2>
       <div class="card">
         <ul class="ul">
-          <li>A small team of experienced professionals, in Sales, Engineering, Operations, and Marketing </li>
-          <li>Humans are at the core of our process. Elements of our process utilize AI tools, however Humans proof all content</li>
-          <li>Experience working with B2B SaaS, Tech, OEM Manufacturers and Professional Services companies</li>
-          <li>We understand the importance of brand voice, we aim to preserve your unique voice throughout the process.</li>
+          <li>We are a small team of experienced professionals, in Sales, Engineering, Operations, and Marketing </li>
+          <li>Our experience working with B2B SaaS, Tech, OEM Manufacturers and Professional Services companies informs our approach.</li>
+          <li>We understand the importance of connsistent messaging and brand voice, we aim to preserve your unique voice throughout the process.</li>
           <li>Follow us on <a class="link" href="https://twitter.com/leadpath_ca" target="_blank" rel="noopener">X</a> and <a class="link" href="https://www.linkedin.com/company/leadpathstudio" target="_blank" rel="noopener">LinkedIn</a></li>
         </ul>
       </div>

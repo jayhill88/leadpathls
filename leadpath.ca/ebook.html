@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Download a sample enhanced ebook from LeadPath to turn your webinars into lead magnets.">
+  <title>LeadPath - Get Your Ebook Sample</title>
+  <style>
+    :root {
+      --bg: #F5F7FA; /* Soft white-gray */
+      --card: #FFFFFF; /* White */
+      --text: #2D3748; /* Dark gray-blue */
+      --muted: #718096; /* Mid-gray */
+      --line: rgba(45, 55, 72, 0.15); /* Border */
+      --cta: #F56565; /* Coral */
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: var(--bg); }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 40px 16px; }
+    .hero { text-align: center; padding: 32px 0; }
+    h1 { font-size: clamp(24px, 3vw, 36px); line-height: 1.2; margin: 0 0 12px; }
+    p.lead { font-size: 16px; color: var(--muted); margin: 0 0 20px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px; margin: 0 auto; max-width: 600px; }
+    form { display: grid; gap: 12px; }
+    label { font-size: 14px; font-weight: 400; }
+    input { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(45, 55, 72, 0.2); background: rgba(45, 55, 72, 0.08); color: var(--text); }
+    .btn { cursor: pointer; border: 0; border-radius: 10px; padding: 12px; font-weight: 700; color: #FFFFFF; background: linear-gradient(180deg, #F56565, #E53E3E); text-align: center; }
+    .btn-block { width: 100%; display: inline-block; }
+    .testimonial { font-size: 14px; color: var(--muted); margin-top: 20px; text-align: center; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 600px) { .wrap { padding: 24px 12px; } h1 { font-size: 28px; } .row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <h1>Get Your Ebook Sample</h1>
+      <p class="lead">Turn your webinars into lead magnets with LeadPath’s enhanced ebooks, optimized for X and LinkedIn.</p>
+    </div>
+    <div class="card">
+      <form name="lead" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+        <input type="hidden" name="form-name" value="lead" />
+        <p hidden><label>Don’t fill this out <input name="bot-field" /></label></p>
+        <div class="row">
+          <div>
+            <label for="fname">First Name</label>
+            <input id="fname" type="text" name="first_name" autocomplete="given-name" required placeholder="Enter your first name" />
+          </div>
+          <div>
+            <label for="lname">Last Name</label>
+            <input id="lname" type="text" name="last_name" autocomplete="family-name" required placeholder="Enter your last name" />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-block">Download Ebook Sample</button>
+      </form>
+      <p class="testimonial">“LeadPath’s ebooks transformed our webinars into lasting lead generators.” – Marketing Lead, Canadian SaaS</p>
+    </div>
+  </div>
+</body>
+</html>
