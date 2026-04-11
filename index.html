@@ -1,221 +1,485 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LeadPath — Webinar → E-book</title>
-  <meta name="description" content="We turn your Webinars into conversion-ready eBooks." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leadpath AI — AI Automation for B2B Companies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-  :root {
-    --bg: #F5F7FA; /* Soft white-gray for modern background */
-    --card: #FFFFFF; /* White for card contrast */
-    --text: #2D3748; /* Dark gray-blue for readable text */
-    --muted: #718096; /* Mid-gray for secondary elements */
-    --line: rgba(45, 55, 72, 0.15); /* Darker border for definition */
-    --cta: #F56565; /* Coral for CTAs and logo */
-  }
-  * { box-sizing: border-box }
-  body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: var(--bg); }
-  .wrap { max-width: 960px; margin: 0 auto; padding: 56px 16px; }
-  .hero { display: grid; gap: 20px; align-items: start; grid-template-columns: 1.4fr 1fr; }
-  h1 { margin: 0 0 8px; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.1 }
-  p.lead { margin: 0 0 12px; color: var(--muted) }
-  .badges { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 0 }
-  .badge { font-size: 13px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 6px 10px; background: rgba(45, 55, 72, 0.05) }
-  .card { background: linear-gradient(180deg, rgba(45, 55, 72, 0.05), rgba(45, 55, 72, 0.02)); border: 1px solid var(--line); border-radius: 16px; padding: 8px }
-  form { display: grid; gap: 6px }
-  label { font-weight: 400; font-size: 14px }
-  input, select, textarea {
-    width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(45, 55, 72, 0.2);
-    background: rgba(45, 55, 72, 0.08); color: var(--text);
-  }
-  textarea { min-height: 90px; resize: vertical }
-  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
-  .btn { cursor: pointer; border: 0; border-radius: 10px; padding: 12px 14px; font-weight: 700; color: #FFFFFF; background: linear-gradient(180deg, #F56565, #E53E3E) }
-  .hint { font-size: 12px; color: var(--muted) }
-  .section { margin-top: 16px }
-  .tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px }
-  .tier { display: flex; flex-direction: column; min-width: 0 }
-  .tier h3 { margin: 0 0 4px; font-size: 18px }
-  .full { grid-column: 1 / -1; }
-  .section { display: block; grid-column: 1 / -1; }
-  .btn-block { width: 100%; display: inline-block; text-align: center; }
-  .ul { margin: 8px 0 0; padding-left: 18px }
-  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px }
-  hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0 }
-  .footer { margin-top: 28px; color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap }
-  @media (max-width: 900px) { .hero { grid-template-columns: 1fr } .tiers, .grid-3 { grid-template-columns: 1fr } }
-</style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #06090F;
+      color: #E2E8F0;
+      line-height: 1.6;
+    }
+
+    h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.1; }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 700; line-height: 1.2; }
+    h3 { font-size: 1.15rem; font-weight: 600; }
+    p { color: #94A3B8; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 80px 0; }
+
+    .accent { color: #38BDF8; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(6,9,15,0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 16px 0;
+    }
+    nav .container { display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-size: 1.25rem; font-weight: 800; color: #fff; text-decoration: none; letter-spacing: -0.02em; }
+    .nav-logo span { color: #38BDF8; }
+    .btn-nav {
+      background: #38BDF8; color: #06090F;
+      padding: 10px 22px; border-radius: 8px;
+      font-weight: 700; font-size: 0.9rem;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .btn-nav:hover { background: #7DD3FC; }
+
+    /* HERO */
+    .hero {
+      padding: 100px 0 80px;
+      background: radial-gradient(ellipse at 50% -10%, rgba(56,189,248,0.10) 0%, transparent 65%);
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(56,189,248,0.1);
+      border: 1px solid rgba(56,189,248,0.25);
+      color: #38BDF8; border-radius: 100px;
+      padding: 6px 16px; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .hero h1 { max-width: 820px; margin: 0 auto 20px; }
+    .hero > .container > p { font-size: 1.1rem; max-width: 540px; margin: 0 auto 40px; }
+    .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: #38BDF8; color: #06090F;
+      padding: 14px 30px; border-radius: 10px;
+      font-weight: 700; font-size: 1rem;
+      text-decoration: none; transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: #7DD3FC; transform: translateY(-2px); }
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #E2E8F0; padding: 14px 30px; border-radius: 10px;
+      font-weight: 600; font-size: 1rem;
+      text-decoration: none; transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-secondary:hover { border-color: #38BDF8; color: #38BDF8; }
+
+    /* AUDIT BANNER */
+    .audit-banner {
+      background: linear-gradient(135deg, rgba(56,189,248,0.10) 0%, rgba(52,211,153,0.07) 100%);
+      border: 1px solid rgba(56,189,248,0.2);
+      border-radius: 18px; padding: 44px 40px;
+      text-align: center;
+    }
+    .audit-banner h2 { margin-bottom: 14px; }
+    .audit-banner > p { max-width: 500px; margin: 0 auto 28px; font-size: 1.05rem; }
+    .audit-bullets {
+      display: flex; gap: 28px; justify-content: center;
+      flex-wrap: wrap; margin-bottom: 32px;
+    }
+    .audit-bullet { color: #94A3B8; font-size: 0.9rem; }
+    .audit-bullet::before { content: "✓ "; color: #34D399; font-weight: 700; }
+
+    /* SECTION HEADER */
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-header p { max-width: 520px; margin: 14px auto 0; font-size: 1.05rem; }
+
+    /* STEPS */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
+    .step {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px; padding: 32px;
+      transition: border-color 0.2s;
+    }
+    .step:hover { border-color: rgba(56,189,248,0.25); }
+    .step-num {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(56,189,248,0.1);
+      border: 1px solid rgba(56,189,248,0.3);
+      color: #38BDF8; font-weight: 700; font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .step h3 { margin-bottom: 10px; color: #F1F5F9; }
+
+    /* AUTOMATIONS */
+    .automations { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+    .automation-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px; padding: 26px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .automation-card:hover { border-color: rgba(56,189,248,0.3); transform: translateY(-2px); }
+    .automation-icon { font-size: 1.6rem; margin-bottom: 12px; }
+    .automation-card h3 { font-size: 0.95rem; margin-bottom: 8px; color: #F1F5F9; }
+    .automation-card p { font-size: 0.88rem; }
+
+    /* WHO WE WORK WITH */
+    .industries { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .industry-tag {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 100px; padding: 9px 22px;
+      font-size: 0.9rem; color: #CBD5E1;
+      transition: border-color 0.2s;
+    }
+    .industry-tag:hover { border-color: rgba(56,189,248,0.4); color: #38BDF8; }
+
+    /* PRICING */
+    .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px; }
+    .price-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px; padding: 30px;
+      display: flex; flex-direction: column;
+    }
+    .price-card.featured {
+      background: rgba(56,189,248,0.06);
+      border-color: rgba(56,189,248,0.3);
+    }
+    .price-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.09em;
+      text-transform: uppercase; color: #38BDF8; margin-bottom: 8px;
+    }
+    .price-card h3 { font-size: 1.2rem; color: #F1F5F9; margin-bottom: 6px; }
+    .price-amount { font-size: 1.5rem; font-weight: 800; color: #F1F5F9; margin: 12px 0 4px; }
+    .price-amount span { font-size: 0.85rem; font-weight: 400; color: #64748B; }
+    .price-card ul { list-style: none; margin: 16px 0 24px; flex: 1; }
+    .price-card ul li { color: #94A3B8; font-size: 0.88rem; padding: 5px 0; padding-left: 4px; }
+    .price-card ul li::before { content: "✓ "; color: #34D399; font-weight: 700; }
+    .btn-price {
+      background: rgba(56,189,248,0.12);
+      border: 1px solid rgba(56,189,248,0.3);
+      color: #38BDF8; padding: 12px;
+      border-radius: 10px; font-weight: 600;
+      text-decoration: none; text-align: center;
+      display: block; font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .btn-price:hover { background: #38BDF8; color: #06090F; }
+    .price-card.featured .btn-price {
+      background: #38BDF8; color: #06090F;
+      border-color: #38BDF8;
+    }
+    .price-card.featured .btn-price:hover { background: #7DD3FC; }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: linear-gradient(135deg, rgba(56,189,248,0.08) 0%, rgba(52,211,153,0.05) 100%);
+      border-top: 1px solid rgba(56,189,248,0.12);
+      border-bottom: 1px solid rgba(56,189,248,0.12);
+      text-align: center;
+    }
+    .cta-section h2 { margin-bottom: 16px; }
+    .cta-section > .container > p { max-width: 480px; margin: 0 auto 36px; font-size: 1.05rem; }
+
+    /* FORM */
+    .contact-form { max-width: 460px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+    .form-row { display: flex; gap: 14px; }
+    .form-row input { flex: 1; }
+    input, textarea {
+      width: 100%; padding: 13px 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px; color: #E2E8F0;
+      font-family: inherit; font-size: 0.95rem;
+      transition: border-color 0.2s;
+    }
+    input:focus, textarea:focus { outline: none; border-color: #38BDF8; }
+    input::placeholder, textarea::placeholder { color: #475569; }
+    textarea { min-height: 90px; resize: vertical; }
+    .btn-submit {
+      background: #38BDF8; color: #06090F;
+      padding: 14px; border-radius: 10px;
+      font-weight: 700; font-size: 1rem;
+      border: none; cursor: pointer;
+      transition: all 0.2s; font-family: inherit;
+      letter-spacing: -0.01em;
+    }
+    .btn-submit:hover { background: #7DD3FC; transform: translateY(-2px); }
+    .form-note { font-size: 0.82rem; color: #475569; margin-top: 6px; }
+
+    /* DIVIDER */
+    .divider { border: none; border-top: 1px solid rgba(255,255,255,0.06); }
+
+    /* FOOTER */
+    footer { padding: 40px 0; text-align: center; }
+    .footer-links { display: flex; gap: 28px; justify-content: center; margin-bottom: 14px; flex-wrap: wrap; }
+    .footer-links a { color: #475569; font-size: 0.88rem; text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: #38BDF8; }
+    footer > .container > p { font-size: 0.82rem; color: #334155; }
+
+    /* RESPONSIVE */
+    @media (max-width: 620px) {
+      .hero { padding: 60px 0 50px; }
+      section { padding: 60px 0; }
+      .audit-banner { padding: 30px 20px; }
+      .form-row { flex-direction: column; }
+      .audit-bullets { gap: 14px; flex-direction: column; align-items: center; }
+    }
+  </style>
 </head>
 <body>
-  <div class="wrap">
 
-    <!-- HERO -->
-    <section class="hero">
-      <div>
-        <h1>Transform Webinars into Lead Magnets</h1>
-        <p class="lead">Convert your webinars into powerful enhanced ebooks with LeadPath</p>
-        <h3 class="lead">Engaging, Refreshed Content that Drives Leads</h3>
-        <div class="badges">
-          <span class="badge">Executive Summary</span>
-          <span class="badge">Key Message Brief</span>
-          <span class="badge">CTA Focused</span>
-          <span class="badge">Concise Transcription</span>
-          <span class="badge">LinkedIn and email Ready</span>
-        </div>
-      </div>
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <a class="nav-logo" href="#">Leadpath<span> AI</span></a>
+    <a class="btn-nav" href="#book-audit">Book Free Audit</a>
+  </div>
+</nav>
 
-      <!-- CTA FORM (Netlify Forms) -->
-<div class="card">
-  <form name="lead" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
-    <input type="hidden" name="form-name" value="lead" />
-    <p hidden><label>Don’t fill this out <input name="bot-field" /></label></p>
-
-    <div class="row">
-      <div>
-        <label for="fname">First name</label>
-        <input id="fname" type="text" name="first_name" autocomplete="given-name" />
-      </div>
-      <div>
-        <label for="lname">Last name</label>
-        <input id="lname" type="text" name="last_name" autocomplete="family-name" />
-      </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">AI Automation · Waterloo Region</div>
+    <h1>Your team is doing work<br><span class="accent">AI should be doing.</span></h1>
+    <p>Leadpath helps B2B companies identify and automate the manual processes costing them time and money — without hiring a developer.</p>
+    <div class="hero-cta">
+      <a href="#book-audit" class="btn-primary">Book Free AI Audit →</a>
+      <a href="#how-it-works" class="btn-secondary">See How It Works</a>
     </div>
-
-    <div class="row">
-      <div>
-        <label for="company">Company</label>
-        <input id="company" type="text" name="company" autocomplete="organization" />
-      </div>
-      <div>
-        <label for="email">Email</label>
-        <input id="email" type="email" name="email" required autocomplete="email" />
-      </div>
-    </div>
-
-    <!-- Full-width message field -->
-    <div class="full">
-      <label for="msg">Tell us more? (optional)</label>
-      <textarea id="msg" name="message" placeholder="Link to your webinar, brand notes, goals…"></textarea>
-    </div>
-
-    <input type="hidden" name="source" value="leadpath-landing-v1" />
-
-    <!-- Full-width submit button -->
-    <button class="btn btn-block" type="submit">See a Sample of Our Work</button>
-  </form>
-</div>
-
-
-    <!-- VALUE PROPS -->
-    <section class="section">
-      <div class="grid-3">
-        <div class="card">
-          <h3>Increase ROI of Webinars</h3>
-          <p class="lead">Turn a single recording into an enhanced ebook and social assets sales teams can use immediately.</p>
-        </div>
-        <div class="card">
-          <h3>Grow Your List</h3>
-          <p class="lead">Use an enhanced ebook as a Lead Magnet to engage directly on LinkedIn, email and Socials with missed attendees, interested followers and new leads</p>
-        </div>
-        <div class="card">
-          <h3>Keep Your Content Alive</h3>
-          <p class="lead">An enhanced ebook keeps content alive and easy to skim, store and search. Your most important clients get an opportunity to consume your content at their convenience.</p>
-        </div>
-      </div>
-  </section>
-
-    <!-- TIERS (pilot anchors) -->
-  <section class="section">
-    <h2 style="margin:0 0 8px">Packages:</h2>
-      <p class="lead">A 60 minute* webinar typically produces a 14-26 page ebook. An enhanced ebook includes external links to contacts and resources, SEO keywords and CTA's to maximize engagement.</p>
-
-    <div class="tiers">
-    <div class="card tier">
-      <h3>Convert</h3>
-      <p class="lead">Webinar → Enhanced ebook </p>
-      <ul class="ul">
-        <li>Brand-matched style and format</li>
-        <li>Enhanced ebook optimized for lead nurture, including external links to contacts and resources, SEO keywords and CTA's</li>
-        <li>Executive Summary Foreword</li>
-        <li>Key Messages Brief with Call to Action</li>
-        <li>Concise Transcription edited for ebook format</li>
-        <li>LinkedIn and email Ready</li>
-      </ul>
-      <p><strong>$1,200 CAD</strong></p>
-    </div>
-
-    <div class="card tier">
-      <h3>Launch</h3>
-      <p class="lead">Webinar → Enchanced ebook With Lead Capture &amp; Distribution</p>
-      <ul class="ul">
-        <li>Convert Package (branded ebook, visuals, CTA's)</li>
-        <li>Enhanced ebook optimized for lead nurture, including external links to contacts and resources, SEO keywords and CTA's</li>
-        <li>Mobile optimized landing page to collect name, email and Company</li>
-        <li>Pre-configured templates to share ebooks and sync leads to your CRM</li>
-      </ul>
-      <p><strong>$1,600 CAD</strong></p>
-    </div>
-
-    <div class="card tier">
-      <h3>Scale</h3>
-      <p class="lead">Webinar → Enhanced ebook - Monthly</p>
-      <ul class="ul">
-        <li>Everything in the Launch Package</li>
-        <li>Up to 4 webinars per month converted to enhanced ebooks</li>
-        <li>Discount on webinar conversion. Save 25%</li>
-        <li>Dedicated account manager</li>
-        <li>Monthly performance metrics</li>
-        </ul>
-        <p></p><strong>Pricing customized for your exact needs</strong></p>
-    </div>
-
-    <div class="hint" style="margin-top:6px">*Most webinars are 60 minutes in length, webinars longer than 75 minutes may require additional cost</div>
-  </section>
-
-    <!-- HOW IT WORKS -->
-   <section class="section">
-  <h2 style="margin:0 0 8px">How It Works</h2>
-  <div class="card">
-    <p class="lead">We transform your webinar into a powerful lead magnet in three seamless steps. First, we collect your webinar recording, slides, brand guidelines, target audience details, and desired CTAs to align with your goals. Next, our team transcribes the content, creates a structured outline, designs branded visuals, and crafts a 16–24-page enhanced ebook optimized for lead generation with SEO keywords and external links. Finally, we deliver the ebook as a PDF with source files, and for Launch and Scale clients, we provide a mobile-optimized landing page and pre-written X/LinkedIn post templates to capture names, emails, and company details, seamlessly syncing with your CRM.</p>
   </div>
 </section>
 
-    <!-- PROOF / GUARANTEES -->
-    <section class="section">
-      <h2 style="margin:0 0 8px">Results Matter, We Deliver:</h2>
-      <div class="card">
-        <ul class="ul">
-          <li>Content Quality Scorecard & Traceability Map (timestamps ↔ slide IDs).</li>
-          <li>Red-Pen review and “Before → After” ensuring no conflicts of messaging, eliminates mis-spoken details, errors, omissions from the webinar or slides </li>
-          <li>Guarantees: On-Brand voice and messaging. True alignment with original content</li>
-        </ul>
+<!-- AUDIT OFFER BANNER -->
+<section style="padding: 0 0 80px;">
+  <div class="container">
+    <div class="audit-banner">
+      <h2>Free AI Automation Audit</h2>
+      <p>30 minutes. We'll identify at least 3 processes in your business that can be automated this month — and show you exactly what that's worth in time and money.</p>
+      <div class="audit-bullets">
+        <span class="audit-bullet">No pitch</span>
+        <span class="audit-bullet">No software to buy</span>
+        <span class="audit-bullet">Written summary delivered after</span>
+        <span class="audit-bullet">5 spots available this month</span>
       </div>
-    </section>
-
- <!-- WHO / ARE WE -->
-    <section class="section">
-      <h2 style="margin:0 0 8px">Who Are We?</h2>
-      <div class="card">
-        <ul class="ul">
-          <li>We are a small team of experienced professionals, in Sales, Engineering, Operations, and Marketing </li>
-          <li>Our experience working with B2B SaaS, Tech, OEM Manufacturers and Professional Services companies informs our approach.</li>
-          <li>We understand the importance of connsistent messaging and brand voice, we aim to preserve your unique voice throughout the process.</li>
-          <li>Follow us on <a class="link" href="https://twitter.com/leadpath_ca" target="_blank" rel="noopener">X</a> and <a class="link" href="https://www.linkedin.com/company/leadpathstudio" target="_blank" rel="noopener">LinkedIn</a></li>
-        </ul>
-      </div>
-    </section>
-
-    <hr/>
-
-    <div class="footer">
-      <div><span class="lead">Contact Us: <a class="link" href="mailto:jason@leadpath.ca">jason@leadpath.ca</a></span></div>
-      <div>©<span id="y"></span> LeadPath.ca</div>
-      <div class="hint">By submitting, you agree to our privacy policy. We never sell your data.</div>
+      <a href="#book-audit" class="btn-primary">Claim Your Free Audit</a>
     </div>
   </div>
+</section>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <h2>How It Works</h2>
+      <p>From discovery to deployed automation — we handle the process end to end.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Audit</h3>
+        <p>We map your operations and find your highest-value automation opportunities. You get a written report with time savings and ROI estimates — no strings attached.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Build</h3>
+        <p>We design and deploy the workflows using best-in-class AI tools. No jargon, no bloated subscriptions. Just automations that work the way your business actually operates.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Scale</h3>
+        <p>As your business grows, we grow with you. Ongoing clients get a dedicated automation partner — new workflows, maintenance, and access to the latest AI capabilities as they emerge.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- AUTOMATIONS -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <h2>What We Automate</h2>
+      <p>Common workflows we build for clients — delivered in days, not months.</p>
+    </div>
+    <div class="automations">
+      <div class="automation-card">
+        <div class="automation-icon">🎯</div>
+        <h3>Lead Intake & CRM</h3>
+        <p>Auto-populate your CRM from forms and emails. No more manual data entry from your sales team.</p>
+      </div>
+      <div class="automation-card">
+        <div class="automation-icon">📄</div>
+        <h3>Proposal & Quote Generation</h3>
+        <p>Generate branded proposals automatically from CRM data. Cut quote time from hours to minutes.</p>
+      </div>
+      <div class="automation-card">
+        <div class="automation-icon">🔔</div>
+        <h3>Invoice Follow-up</h3>
+        <p>Automated reminder sequences triggered by overdue status. Gets you paid without the awkward chasing.</p>
+      </div>
+      <div class="automation-card">
+        <div class="automation-icon">🚀</div>
+        <h3>Client Onboarding</h3>
+        <p>Welcome sequences, account setup, and checklists that run automatically on every new client signup.</p>
+      </div>
+      <div class="automation-card">
+        <div class="automation-icon">🤖</div>
+        <h3>Support Ticket Triage</h3>
+        <p>AI reads, categorizes, and routes inbound support. Auto-replies for common questions. Frees your team for complex issues.</p>
+      </div>
+      <div class="automation-card">
+        <div class="automation-icon">📋</div>
+        <h3>Meeting Notes → Actions</h3>
+        <p>Record meetings and get an AI-generated summary with action items sent straight to your CRM and task list.</p>
+      </div>
+      <div class="automation-card">
+        <div class="automation-icon">📢</div>
+        <h3>Content Distribution</h3>
+        <p>Write once, publish everywhere. Webinars, posts, and updates automatically distributed across all channels.</p>
+      </div>
+      <div class="automation-card">
+        <div class="automation-icon">⚙️</div>
+        <h3>Custom Workflows</h3>
+        <p>Don't see your use case? If your team does it manually on a schedule, we can likely automate it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WHO WE WORK WITH -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <h2>Who We Work With</h2>
+      <p>B2B companies with operations teams ready to stop doing things the slow way.</p>
+    </div>
+    <div class="industries">
+      <span class="industry-tag">B2B SaaS</span>
+      <span class="industry-tag">Technology Companies</span>
+      <span class="industry-tag">OEM Manufacturers</span>
+      <span class="industry-tag">Professional Services</span>
+      <span class="industry-tag">Financial Services</span>
+      <span class="industry-tag">Marketing Agencies</span>
+      <span class="industry-tag">Logistics & Operations</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PRICING -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <h2>Pricing</h2>
+      <p>Straightforward project-based pricing. No retainer required to get started.</p>
+    </div>
+    <div class="pricing">
+      <div class="price-card">
+        <div class="price-label">Start Here</div>
+        <h3>AI Audit</h3>
+        <div class="price-amount">Free <span>this month</span></div>
+        <ul>
+          <li>30-minute discovery session</li>
+          <li>3+ automation opportunities identified</li>
+          <li>Written ROI summary delivered</li>
+          <li>No commitment required</li>
+        </ul>
+        <a href="#book-audit" class="btn-price">Book Audit</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-label">Most Popular</div>
+        <h3>Automation Build</h3>
+        <div class="price-amount">$1,500–$4,000 <span>per workflow</span></div>
+        <ul>
+          <li>Single workflow designed & built</li>
+          <li>Full testing & QA</li>
+          <li>Documentation & handover</li>
+          <li>30-day support included</li>
+        </ul>
+        <a href="#book-audit" class="btn-price">Get Started</a>
+      </div>
+      <div class="price-card">
+        <div class="price-label">Best Value</div>
+        <h3>Automation Sprint</h3>
+        <div class="price-amount">$5,000–$12,000 <span>/month</span></div>
+        <ul>
+          <li>3–5 workflows in 30 days</li>
+          <li>Full audit included</li>
+          <li>Priority build & support</li>
+          <li>Performance review included</li>
+        </ul>
+        <a href="#book-audit" class="btn-price">Get Started</a>
+      </div>
+      <div class="price-card">
+        <div class="price-label">Ongoing Partner</div>
+        <h3>Monthly Retainer</h3>
+        <div class="price-amount">$1,500–$3,500 <span>/month</span></div>
+        <ul>
+          <li>Ongoing automation partner</li>
+          <li>New workflows as you grow</li>
+          <li>Maintenance & monitoring</li>
+          <li>Early access to new AI tools</li>
+        </ul>
+        <a href="#book-audit" class="btn-price">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK AUDIT CTA -->
+<section class="cta-section" id="book-audit">
+  <div class="container">
+    <h2>Book Your Free <span class="accent">AI Audit</span></h2>
+    <p>Tell us a bit about your business. We'll follow up within 24 hours to book your 30-minute session.</p>
+
+    <!-- 
+      SETUP REQUIRED: 
+      1. Go to https://formspree.io and create a free account
+      2. Create a new form, set your email as the recipient
+      3. Replace YOUR_FORM_ID below with your Formspree form ID (e.g. xrgwkpqz)
+    -->
+    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="text" name="company" placeholder="Company" required>
+      </div>
+      <input type="email" name="email" placeholder="Work Email" required>
+      <input type="text" name="role" placeholder="Your Role / Title">
+      <textarea name="message" placeholder="What does your team spend the most time on manually? (optional)"></textarea>
+      <button type="submit" class="btn-submit">Request My Free Audit →</button>
+    </form>
+    <p class="form-note">5 spots available this month · Waterloo Region businesses prioritized · Response within 24 hours</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="https://twitter.com/leadpath_ca">X / Twitter</a>
+      <a href="https://www.linkedin.com/company/leadpathstudio">LinkedIn</a>
+      <a href="mailto:hello@leadpath.ca">hello@leadpath.ca</a>
+    </div>
+    <p>© 2026 Leadpath AI · Waterloo, Ontario, Canada</p>
+  </div>
+</footer>
+
 </body>
 </html>
-
