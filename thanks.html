@@ -1,76 +1,137 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Thanks — LeadPath Webinar → E‑book</title>
-  <meta name="description" content="Thanks for your submission. We'll follow up with your proposal and timeline." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're Booked — Leadpath AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
   <style>
- :root {
-    --bg: #F5F7FA; /* Soft white-gray for modern background */
-    --card: #FFFFFF; /* White for card contrast */
-    --text: #2D3748; /* Dark gray-blue for readable text */
-    --muted: #718096; /* Mid-gray for secondary elements */
-    --line: rgba(45, 55, 72, 0.15); /* Darker border for definition */
-    --cta: #F56565; /* Coral for CTAs and logo */
-  }
-    body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--text); background:var(--bg); }
-    .wrap { max-width: 760px; margin: 0 auto; padding: 56px 16px; }
-    .card { background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border:1px solid var(--line); border-radius:16px; padding:20px }
-    h1 { margin:0 0 10px; font-size: clamp(28px, 3.2vw, 44px); line-height:1.1 }
-    p.lead { margin: 0 0 16px; color:var(--muted) }
-    .grid { display:grid; gap:14px; grid-template-columns: 1fr 1fr; }
-    .btns { display:flex; gap:10px; flex-wrap:wrap; margin-top:12px }
-    .btn { display:inline-block; text-decoration:none; font-weight:700; color:#071324; background:linear-gradient(180deg,#8be8ff,#5dd4ff); padding:12px 14px; border-radius:10px }
-    .link { color: var(--cta); text-decoration: none; }
-    .hint { font-size:13px; color:var(--muted) }
-    .footer { margin-top: 28px; color:var(--muted); font-size: 13px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap }
-    @media (max-width: 760px){ .grid { grid-template-columns:1fr } }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #F8F6F2;
+      color: #1C1917;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    nav {
+      background: #1C1917;
+      padding: 16px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .nav-logo { font-size: 1.2rem; font-weight: 800; color: #F5F0E8; text-decoration: none; }
+    .nav-logo span { color: #F59E0B; }
+
+    main {
+      flex: 1;
+      display: flex; align-items: center; justify-content: center;
+      padding: 60px 24px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #E7E2D8;
+      border-radius: 20px;
+      padding: 52px 44px;
+      max-width: 580px;
+      width: 100%;
+      text-align: center;
+    }
+    .check {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: #F0FDF4;
+      border: 2px solid #16A34A;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 28px;
+      font-size: 1.8rem;
+    }
+    h1 { font-size: 2rem; font-weight: 800; margin-bottom: 14px; color: #1C1917; }
+    p { color: #78716C; font-size: 1.05rem; margin-bottom: 32px; line-height: 1.6; }
+
+    .next-steps {
+      background: #F8F6F2;
+      border: 1px solid #E7E2D8;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: left;
+      margin-bottom: 32px;
+    }
+    .next-steps h3 { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #A8A29E; margin-bottom: 14px; }
+    .next-steps ol { padding-left: 20px; }
+    .next-steps li { color: #44403C; font-size: 0.95rem; padding: 5px 0; }
+
+    .btn {
+      display: inline-block;
+      background: #F59E0B; color: #1C1917;
+      padding: 13px 28px; border-radius: 10px;
+      font-weight: 700; font-size: 0.95rem;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .btn:hover { background: #D97706; }
+    .btn-ghost {
+      display: inline-block;
+      background: transparent;
+      border: 1px solid #E7E2D8;
+      color: #44403C;
+      padding: 13px 28px; border-radius: 10px;
+      font-weight: 600; font-size: 0.95rem;
+      text-decoration: none; transition: all 0.2s;
+      margin-left: 12px;
+    }
+    .btn-ghost:hover { border-color: #F59E0B; color: #D97706; }
+
+    footer {
+      background: #1C1917;
+      padding: 24px;
+      text-align: center;
+      font-size: 0.82rem;
+      color: #57534E;
+    }
+    footer a { color: #57534E; text-decoration: none; }
+    footer a:hover { color: #F59E0B; }
+
+    @media (max-width: 520px) {
+      .card { padding: 36px 24px; }
+      .btn-ghost { margin-left: 0; margin-top: 10px; }
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1>You're in — thanks!</h1>
-    <p class="lead">We received your details. We will reach out to you shortly with a sample package and additional information.</p>
 
-    <div class="grid">
-      <div class="card">
-        <h3 style="margin:0 0 6px">What happens next?</h3>
-        <ol style="margin:6px 0 0; padding-left:18px">
-          <li>Check your inbox for our email</li>
-          <li>Check out the details and if we can create a sample for you to convince your stakeholders let us know. We can customize it to your needs and it's free.</li>
-          <li>Reply with your webinar link/recording. We will review it in detail to help us develop your project.</li>
-          <li>You will receive a sample, a proposal &amp; timeline within 1-2 business days.</li>
-        </ol>
-        <div class="hint" style="margin-top:8px">Didn’t see an email? Check spam or write us at <a class="link" href="mailto:jason@leadpath.ca">jason@leadpath.ca</a>.</div>
-      </div>
+<nav>
+  <a class="nav-logo" href="/">Leadpath<span> AI</span></a>
+</nav>
 
-      <div class="card">
-        <h3 style="margin:0 0 6px">Optional: 15‑min intake</h3>
-        <p class="lead" style="margin:0 0 8px">Prefer to talk it through? Book a quick intake call and we can get started today.</p>
-        <div class="btns">
-          <!-- Replace # with your Calendly or booking URL -->
-          <a class="btn" href="https://www.calendly.com/leadpath" target="_blank" rel="noopener">Book intake call</a>
-          <a class="btn" href="https://www.leadpath.ca/index.html" >Back to site</a>
-        </div>
-        <div class="hint" style="margin-top:8px">The above link opens a Calendly scheduling page. If you prefer a call instead of Zoom add your phone number in the notes section and we’ll call you at the scheduled time.</div>
-      </div>
+<main>
+  <div class="card">
+    <div class="check">✅</div>
+    <h1>You're all set!</h1>
+    <p>Your Revenue Audit is booked. We'll dig into your business, find where the money is leaking, and come back with a clear picture of what automation can do for you — no fluff, no pitch.</p>
+
+    <div class="next-steps">
+      <h3>What happens next</h3>
+      <ol>
+        <li>Check your inbox for a calendar confirmation</li>
+        <li>We'll review your business ahead of the call</li>
+        <li>On the call: we map your gaps and show you the ROI</li>
+        <li>You decide if you want to move forward — zero pressure</li>
+      </ol>
     </div>
 
-    <div class="card" style="margin-top:14px">
-      <h3 style="margin:0 0 6px">Follow us on X and LinkedIn</h3>
-      <ul style="margin:6px 0 0; padding-left:18px">
-        <li><a class="link" href="https://twitter.com/leadpath_ca" target="_blank" rel="noopener">X</a></li>
-        <li><a class="link" href="https://www.linkedin.com/company/leadpathstudio" target="_blank" rel="noopener">LinkedIn</a></li>
-      </ul>
-    </div>
-
-    <div class="footer">
-      <div>© <span id="y"></span> LeadPath</div>
-      <div class="hint">We never sell your data. <a class="link" href="/">Privacy</a></div>
-    </div>
+    <a class="btn" href="/">Back to Home</a>
+    <a class="btn-ghost" href="https://www.linkedin.com/company/leadpathstudio" target="_blank" rel="noopener">Follow on LinkedIn</a>
   </div>
+</main>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<footer>
+  <p>© <span id="y"></span> Leadpath AI · Waterloo, Ontario &nbsp;·&nbsp; <a href="/privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="mailto:hello@leadpath.ca">hello@leadpath.ca</a></p>
+</footer>
+
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>

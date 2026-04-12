@@ -1,230 +1,210 @@
 <!DOCTYPE html>
 <html lang="en-CA">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Privacy Policy • LeadPath</title>
-  <meta name="description" content="LeadPath privacy policy describing what data we collect, how we use it, and your rights under PIPEDA, CASL, and applicable laws." />
-  <meta name="theme-color" content="#0ea5e9" />
-  <link rel="canonical" href="https://leadpath.ca/privacy" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Leadpath AI</title>
+  <meta name="description" content="Leadpath AI privacy policy — how we collect, use, and protect your information.">
+  <link rel="canonical" href="https://leadpath.ca/privacy">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
   <style>
-   :root {
-    --bg: #F5F7FA; /* Soft white-gray for modern background */
-    --card: #FFFFFF; /* White for card contrast */
-    --text: #2D3748; /* Dark gray-blue for readable text */
-    --muted: #718096; /* Mid-gray for secondary elements */
-    --line: rgba(45, 55, 72, 0.15); /* Darker border for definition */
-    --cta: #F56565; /* Coral for CTAs and logo */
-  }
-    html, body { background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; margin: 0; }
-    a { color: var(--brand); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    header { padding: 64px 24px 24px; text-align: center; background: radial-gradient(1000px 600px at 50% -200px, #0ea5e922, transparent); }
-    header h1 { font-size: clamp(28px, 4vw, 40px); margin: 0 0 8px; letter-spacing: 0.2px; }
-    header p { color: var(--muted); margin: 0; }
-    main { max-width: 900px; padding: 24px; margin: 0 auto 96px; }
-    .card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin: 16px 0; }
-    .toc a { display: block; padding: 6px 0; }
-    h2 { font-size: 1.4rem; margin: 28px 0 8px; }
-    h3 { font-size: 1.05rem; margin: 20px 0 6px; color: var(--muted); }
-    ul { padding-left: 20px; }
-    code.badge { background: #111827; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); font-size: 12px; }
-    .note { border-left: 4px solid var(--brand); padding: 12px 16px; background: #0ea5e914; border-radius: 8px; }
-    footer { max-width: 900px; margin: 48px auto; padding: 0 24px 48px; color: var(--muted); }
-    .kicker { display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem; color: var(--muted); }
-    .pill { display: inline-block; border:1px solid var(--border); background:#0a0c12; padding: 2px 10px; border-radius: 999px; font-size: 12px; color: var(--muted); }
-    @media print {
-      body { background:#fff; color:#000; }
-      .card, header, footer { background:#fff; border-color:#ccc; }
-      a { color:#000; text-decoration: underline; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #F8F6F2;
+      color: #1C1917;
+      line-height: 1.7;
     }
+    nav {
+      background: #1C1917;
+      padding: 16px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .nav-logo { font-size: 1.2rem; font-weight: 800; color: #F5F0E8; text-decoration: none; }
+    .nav-logo span { color: #F59E0B; }
+    .btn-nav {
+      background: #F59E0B; color: #1C1917;
+      padding: 9px 20px; border-radius: 8px;
+      font-weight: 700; font-size: 0.88rem;
+      text-decoration: none;
+    }
+
+    header {
+      background: #1C1917;
+      padding: 60px 24px 52px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    header h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); color: #F5F0E8; margin-bottom: 10px; }
+    header p { color: #A8A29E; font-size: 0.95rem; }
+
+    main { max-width: 820px; margin: 0 auto; padding: 48px 24px 96px; }
+
+    .card {
+      background: #fff;
+      border: 1px solid #E7E2D8;
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-bottom: 16px;
+    }
+    h2 { font-size: 1.25rem; font-weight: 700; color: #1C1917; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #E7E2D8; }
+    h3 { font-size: 0.95rem; font-weight: 700; color: #78716C; margin: 18px 0 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+    p { color: #44403C; margin-bottom: 12px; }
+    ul, ol { padding-left: 20px; color: #44403C; }
+    ul li, ol li { padding: 4px 0; }
+    a { color: #D97706; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .summary-card {
+      background: #FEF3C7;
+      border: 1px solid #F59E0B;
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+    }
+    .summary-card p { color: #78350F; margin: 0; font-weight: 500; }
+
+    .toc { background: #fff; border: 1px solid #E7E2D8; border-radius: 14px; padding: 24px 28px; margin-bottom: 24px; }
+    .toc h3 { font-size: 0.8rem; color: #A8A29E; margin-bottom: 12px; }
+    .toc a { display: block; color: #44403C; padding: 4px 0; font-size: 0.92rem; border-bottom: 1px solid #F8F6F2; }
+    .toc a:hover { color: #D97706; text-decoration: none; }
+
+    footer {
+      background: #1C1917;
+      padding: 28px 24px;
+      text-align: center;
+      font-size: 0.82rem;
+      color: #57534E;
+    }
+    footer a { color: #57534E; text-decoration: none; }
+    footer a:hover { color: #F59E0B; }
   </style>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"PrivacyPolicy",
-    "name":"LeadPath Privacy Policy",
-    "url":"https://leadpath.ca/privacy",
-    "publisher":{"@type":"Organization","name":"[LEGAL COMPANY NAME]","url":"https://leadpath.ca"},
-    "datePublished":"2025-09-03",
-    "dateModified":"2025-09-03"
-  }
-  </script>
 </head>
 <body>
-  <header>
-    <h1>Privacy Policy</h1>
-    <p>Effective date: <strong>September 3, 2025</strong> · Site: <strong>leadpath.ca</strong></p>
-    <p class="kicker"><span class="pill">PIPEDA (Canada)</span> <span class="pill">CASL</span> <span class="pill">GDPR (for EU/UK visitors)</span> <span class="pill">CCPA/CPRA (for CA residents)</span></p>
-  </header>
 
-  <main>
-    <section class="card note" aria-label="summary">
-      <p><strong>Quick summary:</strong> We collect contact details and usage data to deliver our webinar conversion services, respond to inquiries, and send opted-in marketing emails. We do not sell personal information. You can opt out of marketing at any time and request access, correction, or deletion where applicable.</p>
-    </section>
+<nav>
+  <a class="nav-logo" href="/">Leadpath<span> AI</span></a>
+  <a class="btn-nav" href="/#book-audit">Book Free Audit</a>
+</nav>
 
-    <nav class="card toc" aria-label="Table of contents">
-      <strong>Table of contents</strong>
-      <a href="#who-we-are">1. Who we are</a>
-      <a href="#scope">2. Scope</a>
-      <a href="#what-we-collect">3. Information we collect</a>
-      <a href="#how-we-use">4. How we use information</a>
-      <a href="#sharing">5. How we share information</a>
-      <a href="#cookies">6. Cookies & analytics</a>
-      <a href="#ads">7. Email & direct marketing (CASL)</a>
-      <a href="#retention">8. Retention</a>
-      <a href="#security">9. Security</a>
-      <a href="#location-transfers">10. Location & cross-border transfers</a>
-      <a href="#your-rights">11. Your rights</a>
-      <a href="#children">12. Children’s privacy</a>
-      <a href="#changes">13. Changes to this policy</a>
-      <a href="#contact">14. How to contact us</a>
-    </nav>
+<header>
+  <h1>Privacy Policy</h1>
+  <p>Effective date: April 12, 2026 &nbsp;·&nbsp; Site: leadpath.ca</p>
+</header>
 
-    <section id="who-we-are" class="card">
-      <h2>1) Who we are</h2>
-      <p><strong>[LEGAL COMPANY NAME]</strong> (“<strong>LeadPath</strong>”, “we”, “us”, or “our”) operates the website <a href="https://leadpath.ca">leadpath.ca</a> and provides webinar-to-eBook and related marketing services in Canada.</p>
-      <p>Registered address: <em>[COMPANY ADDRESS]</em>. Privacy contact: <a href="mailto:jason@leadpath.ca">jason@leadpath.ca</a>.</p>
-    </section>
+<main>
+  <div class="summary-card">
+    <p><strong>Short version:</strong> We collect contact details to respond to inquiries and deliver our services. We don't sell your data. You can opt out of marketing at any time.</p>
+  </div>
 
-    <section id="scope" class="card">
-      <h2>2) Scope</h2>
-      <p>This policy applies to personal information processed through our website, forms, and communications relating to our services. Additional terms or agreements may apply to specific engagements and will govern to the extent of any conflict.</p>
-    </section>
+  <nav class="toc">
+    <h3>Table of Contents</h3>
+    <a href="#who">1. Who we are</a>
+    <a href="#collect">2. Information we collect</a>
+    <a href="#use">3. How we use it</a>
+    <a href="#share">4. How we share it</a>
+    <a href="#marketing">5. Email & marketing (CASL)</a>
+    <a href="#retention">6. Retention</a>
+    <a href="#rights">7. Your rights</a>
+    <a href="#security">8. Security</a>
+    <a href="#changes">9. Changes</a>
+    <a href="#contact">10. Contact</a>
+  </nav>
 
-    <section id="what-we-collect" class="card">
-      <h2>3) Information we collect</h2>
-      <h3>Information you provide</h3>
-      <ul>
-        <li><strong>Contact details</strong>: name, email, phone, company, role, preferences.</li>
-        <li><strong>Inquiry & project data</strong>: messages, meeting notes, requirements, and files you upload or share.</li>
-        <li><strong>Marketing preferences</strong>: newsletter/webinar sign-ups and consent choices.</li>
-      </ul>
-      <h3>Information we collect automatically</h3>
-      <ul>
-        <li><strong>Usage & device data</strong>: pages viewed, links clicked, IP address, browser/OS, timestamps, approximate location.</li>
-        <li><strong>Cookies/SDKs</strong>: used for core functionality, analytics, and (if enabled) marketing performance.</li>
-      </ul>
-      <h3>Information from other sources</h3>
-      <ul>
-        <li><strong>Business contacts</strong> from events, LinkedIn, referrals, or publicly available sources, consistent with applicable laws.</li>
-      </ul>
-    </section>
+  <div class="card" id="who">
+    <h2>1. Who We Are</h2>
+    <p>Leadpath AI operates <a href="https://leadpath.ca">leadpath.ca</a> and provides AI automation services for small and medium-sized businesses in Canada.</p>
+    <p>Privacy contact: <a href="mailto:hello@leadpath.ca">hello@leadpath.ca</a> &nbsp;·&nbsp; Waterloo, Ontario, Canada.</p>
+  </div>
 
-    <section id="how-we-use" class="card">
-      <h2>4) How we use information</h2>
-      <ul>
-        <li>Provide, operate, and improve our site and services.</li>
-        <li>Respond to inquiries, schedule meetings, deliver proposals, and fulfill contracts.</li>
-        <li>Send service messages (e.g., confirmations, notices).</li>
-        <li>With your consent (or as permitted by law), send newsletters, webinar invites, and product updates.</li>
-        <li>Analyze site performance and audience interests to improve our offerings.</li>
-        <li>Detect, prevent, and address fraud, abuse, and security incidents.</li>
-        <li>Comply with legal obligations and enforce our terms.</li>
-      </ul>
-      <p><span class="badge code">Legal bases (EU/UK visitors)</span> Consent, contract performance, legitimate interests (e.g., service improvement, B2B marketing), and legal obligations.</p>
-    </section>
+  <div class="card" id="collect">
+    <h2>2. Information We Collect</h2>
+    <h3>What you provide</h3>
+    <ul>
+      <li>Name, email, company name, and role when you fill out our audit request form</li>
+      <li>Messages and notes from calls or email exchanges</li>
+      <li>Scheduling data when you book through Calendly</li>
+    </ul>
+    <h3>Automatically collected</h3>
+    <ul>
+      <li>Basic usage data (pages visited, device type, browser) via analytics tools</li>
+      <li>IP address and approximate location</li>
+    </ul>
+  </div>
 
-    <section id="sharing" class="card">
-      <h2>5) How we share information</h2>
-      <p>We do not sell personal information.</p>
-      <ul>
-        <li><strong>Hosting & infrastructure</strong>: e.g., managed cloud providers.</li>
-        <li><strong>Analytics</strong>: e.g., <em>[ANALYTICS TOOL, e.g., Google Analytics]</em>.</li>
-        <li><strong>Email & CRM</strong>: e.g., <em>[EMAIL/CRM TOOL, e.g., Mailchimp, HubSpot]</em>.</li>
-        <li><strong>Scheduling</strong>: e.g., <em>[SCHEDULING TOOL, e.g., Calendly]</em>.</li>
-        <li><strong>Professional advisors</strong>: legal, accounting, insurance.</li>
-        <li><strong>Legal reasons</strong>: to comply with law, enforce terms, or protect rights, safety, and security.</li>
-      </ul>
-    </section>
+  <div class="card" id="use">
+    <h2>3. How We Use It</h2>
+    <ul>
+      <li>To respond to your inquiry and deliver our services</li>
+      <li>To schedule and prepare for your audit call</li>
+      <li>To send service-related communications (confirmations, follow-ups)</li>
+      <li>To send marketing emails with your consent, as permitted under CASL</li>
+      <li>To improve our site and service quality</li>
+    </ul>
+  </div>
 
-    <section id="cookies" class="card">
-      <h2>6) Cookies & analytics</h2>
-      <p>We use essential cookies to run the site only. We do not have or use cookies for analytics and marketing.</p>
-      <ul>
-      </ul>
-      <p><em>We Do Not Track:</em> We will update this notice if our handling changes.</p>
-    </section>
+  <div class="card" id="share">
+    <h2>4. How We Share It</h2>
+    <p>We do not sell personal information. We may share data with:</p>
+    <ul>
+      <li><strong>Service providers</strong> — hosting, scheduling (Calendly), email tools</li>
+      <li><strong>Professional advisors</strong> — legal and accounting, as needed</li>
+      <li><strong>Legal requirements</strong> — when required by law or to protect rights and safety</li>
+    </ul>
+  </div>
 
-    <section id="ads" class="card">
-      <h2>7) Email & direct marketing (CASL)</h2>
-      <p>Under Canada’s Anti-Spam Legislation (CASL), we only send commercial electronic messages with appropriate consent (express or implied) or as otherwise permitted by law. Every marketing message includes an unsubscribe mechanism.</p>
-      <ul>
-        <li><strong>Opt-out:</strong> Click “unsubscribe” in any email or contact us at <a href="mailto:jason@leadpath.ca">jason@leadpath.ca</a>.</li>
-        <li><strong>Implied consent sunset:</strong> Where implied consent applies (e.g., existing business relationship), we follow CASL’s time limits unless new consent is obtained.</li>
-      </ul>
-    </section>
+  <div class="card" id="marketing">
+    <h2>5. Email & Marketing (CASL)</h2>
+    <p>We only send commercial emails with appropriate consent under Canada's Anti-Spam Legislation (CASL). Every marketing message includes an unsubscribe link.</p>
+    <p>To opt out: click "unsubscribe" in any email or contact us at <a href="mailto:hello@leadpath.ca">hello@leadpath.ca</a>.</p>
+  </div>
 
-    <section id="retention" class="card">
-      <h2>8) Retention</h2>
-      <p>We retain personal information only as long as necessary for the purposes described here or as required by law. Typical periods:</p>
-      <ul>
-        <li><strong>Prospect & marketing records:</strong> up to <em>[e.g., 24 months]</em> from last interaction or until you opt out.</li>
-        <li><strong>Client & project records:</strong> for the engagement and a reasonable period thereafter to meet legal/accounting requirements.</li>
-        <li><strong>Website logs:</strong> short-term rolling windows for security and diagnostics.</li>
-      </ul>
-    </section>
+  <div class="card" id="retention">
+    <h2>6. Retention</h2>
+    <p>We keep your information only as long as needed to deliver our services or meet legal obligations — typically up to 24 months from last contact for prospects, and longer for active clients as required by law.</p>
+  </div>
 
-    <section id="security" class="card">
-      <h2>9) Security</h2>
-      <p>We use administrative, technical, and physical safeguards appropriate to the sensitivity of the information. No method of transmission or storage is 100% secure; we cannot guarantee absolute security.</p>
-    </section>
+  <div class="card" id="rights">
+    <h2>7. Your Rights</h2>
+    <p>Under PIPEDA (Canada) and applicable laws, you may:</p>
+    <ul>
+      <li>Request access to information we hold about you</li>
+      <li>Request corrections to inaccurate information</li>
+      <li>Withdraw consent for marketing at any time</li>
+      <li>Request deletion where permitted by law</li>
+    </ul>
+    <p>EU/UK visitors have additional rights under GDPR. California residents have rights under CCPA/CPRA. Contact us to exercise any of these rights.</p>
+  </div>
 
-    <section id="location-transfers" class="card">
-      <h2>10) Location & cross-border transfers</h2>
-      <p>We and our service providers may process information in Canada, the United States, and other jurisdictions. Where required, we use contractual safeguards (e.g., Standard Contractual Clauses) or rely on other lawful transfer mechanisms.</p>
-    </section>
+  <div class="card" id="security">
+    <h2>8. Security</h2>
+    <p>We use appropriate technical and administrative safeguards to protect your information. No method of transmission or storage is 100% secure.</p>
+  </div>
 
-    <section id="your-rights" class="card">
-      <h2>11) Your rights</h2>
-      <h3>PIPEDA (Canada)</h3>
-      <ul>
-        <li>Access the personal information we hold about you.</li>
-        <li>Request correction or updates to inaccurate or incomplete information.</li>
-        <li>Withdraw consent to non-essential processing (e.g., marketing) at any time.</li>
-        <li>File a complaint with the Office of the Privacy Commissioner of Canada (OPC) or your provincial privacy commissioner.</li>
-      </ul>
-      <h3>GDPR/UK GDPR (EU/UK visitors)</h3>
-      <ul>
-        <li>Rights of access, rectification, erasure, restriction, objection, and data portability, subject to conditions and exemptions.</li>
-        <li>You may also lodge a complaint with your local supervisory authority.</li>
-      </ul>
-      <h3>California (CCPA/CPRA)</h3>
-      <ul>
-        <li>Right to know categories of personal information collected, sources, purposes, and disclosures.</li>
-        <li>Right to access, delete, and correct personal information, and to opt-out of “sale”/“sharing” as defined by law.</li>
-      </ul>
-      <p><strong>How to exercise your rights:</strong> Email <a href="mailto:jason@leadpath.ca">jason@leadpath.ca</a>. We may need to verify your identity before fulfilling requests.</p>
-    </section>
+  <div class="card" id="changes">
+    <h2>9. Changes to This Policy</h2>
+    <p>We may update this policy from time to time. Material changes will be noted by updating the effective date above.</p>
+  </div>
 
-    <section id="children" class="card">
-      <h2>12) Children’s privacy</h2>
-      <p>Our site and services are intended for business audiences. We do not knowingly collect personal information from children under the age of 16.</p>
-    </section>
+  <div class="card" id="contact">
+    <h2>10. Contact</h2>
+    <p>Questions or requests about this policy:</p>
+    <ul>
+      <li>Email: <a href="mailto:hello@leadpath.ca">hello@leadpath.ca</a></li>
+      <li>Mail: Leadpath AI, Waterloo, Ontario, Canada (<a href="mailto:hello@leadpath.ca">request mailing address</a>)</li>
+    </ul>
+  </div>
+</main>
 
-    <section id="changes" class="card">
-      <h2>13) Changes to this policy</h2>
-      <p>We may update this policy from time to time. Material changes will be indicated by updating the “Effective date” above and, where appropriate, additional notice.</p>
-    </section>
+<footer>
+  <p>© <span id="y"></span> Leadpath AI · Waterloo, Ontario &nbsp;·&nbsp; <a href="/">Home</a> &nbsp;·&nbsp; <a href="mailto:hello@leadpath.ca">hello@leadpath.ca</a></p>
+</footer>
 
-    <section id="contact" class="card">
-      <h2>14) How to contact us</h2>
-      <p>Questions or requests about this policy can be sent to our privacy contact:</p>
-      <ul>
-        <li>Email: <a href="mailto:jason@leadpath.ca">jason@leadpath.ca</a></li>
-        <li>Mail: <em>Internet Retail Company, Kitchener, ON Canada.</em> <a href="mailto:jason@leadpath.ca">Request mailing address</a></li>
-      </ul>
-      <p class="note"><strong>Not legal advice:</strong> This page is for transparency and compliance communication. If you need legal advice, consult a qualified lawyer.</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© <span id="y"></span> LeadPath c/o Internet Retail Company. All rights reserved.</p>
-  </footer>
-
-  <script>
-    // Update footer year on load (non-essential convenience)
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
