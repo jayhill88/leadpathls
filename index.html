@@ -504,26 +504,17 @@
 <!-- BOOK AUDIT CTA -->
 <section class="cta-section" id="book-audit">
   <div class="container">
-    <h2>Find out what your business is <span class="accent">leaving behind</span></h2>
-    <p>30 minutes. We'll show you exactly where the gaps are and what fixing them is worth. No pitch. No obligation.</p>
-
-    <!--
-      SETUP REQUIRED:
-      1. Go to https://formspree.io and create a free account
-      2. Create a new form, set your email as the recipient
-      3. Replace YOUR_FORM_ID below with your Formspree form ID (e.g. xrgwkpqz)
-    -->
-    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <div class="form-row">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="text" name="company" placeholder="Business Name" required>
+    <h2>Book Your Free <span class="accent">Revenue Audit</span></h2>
+    <p>Pick a time that works for you. 30 minutes — we'll show you exactly where your business is leaving money and what fixing it is worth.</p>
+    <div style="margin: 0 auto; max-width: 700px;">
+      <!-- Calendly inline widget -->
+      <div class="calendly-inline-widget"
+           data-url="https://calendly.com/leadpathai?hide_gdpr_banner=1&background_color=1C1917&text_color=F5F0E8&primary_color=F59E0B"
+           style="min-width:280px; height:700px;">
       </div>
-      <input type="email" name="email" placeholder="Email Address" required>
-      <input type="text" name="type" placeholder="What kind of business? (e.g. HVAC, contractor, landscaping)">
-      <textarea name="message" placeholder="What's your biggest headache right now? (optional)"></textarea>
-      <button type="submit" class="btn-submit">Book My Free Revenue Audit →</button>
-    </form>
-    <p class="form-note">5 spots available this month · Response within 24 hours · No sales pressure</p>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+    <p class="form-note" style="margin-top: 16px;">No sales pressure · 30 minutes · Response same day</p>
   </div>
 </section>
 
