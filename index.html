@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leadpath AI — More Revenue, Less Manual Work</title>
+  <title>Leadpath AI — Done-For-You Automation for Service Businesses</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="/favicon.ico">
@@ -14,20 +14,6 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
-    /* PALETTE
-       --bg:        #F8F6F2  warm off-white (sections)
-       --bg-dark:   #1C1917  warm charcoal (hero, dark sections)
-       --amber:     #F59E0B  primary accent
-       --amber-dk:  #D97706  hover state
-       --green:     #16A34A  money/results
-       --text:      #1C1917  body text on light
-       --text-lt:   #F5F0E8  body text on dark
-       --muted:     #78716C  secondary text on light
-       --muted-dk:  #A8A29E  secondary text on dark
-       --border:    #E7E2D8  light section borders
-       --border-dk: rgba(255,255,255,0.08) dark section borders
-    */
 
     body {
       font-family: 'Inter', -apple-system, sans-serif;
@@ -47,7 +33,7 @@
     .accent { color: #F59E0B; }
     .green { color: #16A34A; }
 
-    /* NAV — dark bar */
+    /* NAV */
     nav {
       position: sticky; top: 0; z-index: 100;
       background: #1C1917;
@@ -65,7 +51,7 @@
     }
     .btn-nav:hover { background: #D97706; }
 
-    /* HERO — warm dark */
+    /* HERO */
     .hero {
       padding: 100px 0 90px;
       background: #1C1917;
@@ -82,7 +68,7 @@
       margin-bottom: 24px;
     }
     .hero h1 { max-width: 820px; margin: 0 auto 20px; color: #F5F0E8; }
-    .hero > .container > p { font-size: 1.1rem; max-width: 580px; margin: 0 auto 40px; color: #A8A29E; }
+    .hero > .container > p { font-size: 1.1rem; max-width: 600px; margin: 0 auto 40px; color: #A8A29E; }
     .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
     .btn-primary {
@@ -103,7 +89,7 @@
     }
     .btn-secondary:hover { border-color: #F59E0B; color: #F59E0B; }
 
-    /* MONEY SECTION — light bg */
+    /* MONEY SECTION */
     .money-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
     .money-card {
       background: #fff;
@@ -119,11 +105,8 @@
     .section-header h2 { color: #1C1917; }
     .section-header p { max-width: 560px; margin: 14px auto 0; font-size: 1.05rem; }
 
-    /* DARK SECTION — used for modules */
-    .section-dark {
-      background: #1C1917;
-      padding: 80px 0;
-    }
+    /* DARK SECTION */
+    .section-dark { background: #1C1917; padding: 80px 0; }
     .section-dark .section-header h2 { color: #F5F0E8; }
     .section-dark .section-header p { color: #A8A29E; }
 
@@ -159,7 +142,7 @@
     }
     .module-result::before { content: "💰 "; }
 
-    /* STEPS — light */
+    /* STEPS */
     .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
     .step {
       background: #fff;
@@ -178,7 +161,7 @@
     }
     .step h3 { margin-bottom: 10px; color: #1C1917; }
 
-    /* WHO WE WORK WITH */
+    /* INDUSTRIES */
     .industries { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
     .industry-tag {
       background: #fff;
@@ -200,10 +183,7 @@
       transition: box-shadow 0.2s;
     }
     .price-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
-    .price-card.featured {
-      background: #1C1917;
-      border-color: #F59E0B;
-    }
+    .price-card.featured { background: #1C1917; border-color: #F59E0B; }
     .price-label {
       font-size: 0.72rem; font-weight: 700; letter-spacing: 0.09em;
       text-transform: uppercase; color: #F59E0B; margin-bottom: 8px;
@@ -213,6 +193,8 @@
     .price-amount { font-size: 1.5rem; font-weight: 800; color: #1C1917; margin: 12px 0 4px; }
     .price-card.featured .price-amount { color: #F5F0E8; }
     .price-amount span { font-size: 0.85rem; font-weight: 400; color: #A8A29E; }
+    .price-monthly { font-size: 0.9rem; color: #78716C; margin-bottom: 4px; }
+    .price-card.featured .price-monthly { color: #A8A29E; }
     .price-card ul { list-style: none; margin: 16px 0 24px; flex: 1; }
     .price-card ul li { color: #78716C; font-size: 0.88rem; padding: 5px 0; padding-left: 4px; }
     .price-card.featured ul li { color: #A8A29E; }
@@ -227,13 +209,10 @@
       transition: all 0.2s;
     }
     .btn-price:hover { background: #F59E0B; border-color: #F59E0B; color: #1C1917; }
-    .price-card.featured .btn-price {
-      background: #F59E0B; color: #1C1917;
-      border-color: #F59E0B;
-    }
+    .price-card.featured .btn-price { background: #F59E0B; color: #1C1917; border-color: #F59E0B; }
     .price-card.featured .btn-price:hover { background: #D97706; border-color: #D97706; }
 
-    /* CTA SECTION — dark */
+    /* CTA SECTION */
     .cta-section {
       background: #1C1917;
       background-image: radial-gradient(ellipse at 50% 100%, rgba(245,158,11,0.10) 0%, transparent 60%);
@@ -243,34 +222,10 @@
     .cta-section h2 { color: #F5F0E8; margin-bottom: 16px; }
     .cta-section > .container > p { max-width: 480px; margin: 0 auto 36px; font-size: 1.05rem; color: #A8A29E; }
 
-    /* FORM */
-    .contact-form { max-width: 460px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
-    .form-row { display: flex; gap: 14px; }
-    .form-row input { flex: 1; }
-    input, textarea {
-      width: 100%; padding: 13px 16px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 10px; color: #F5F0E8;
-      font-family: inherit; font-size: 0.95rem;
-      transition: border-color 0.2s;
-    }
-    input:focus, textarea:focus { outline: none; border-color: #F59E0B; }
-    input::placeholder, textarea::placeholder { color: #57534E; }
-    textarea { min-height: 90px; resize: vertical; }
-    .btn-submit {
-      background: #F59E0B; color: #1C1917;
-      padding: 14px; border-radius: 10px;
-      font-weight: 700; font-size: 1rem;
-      border: none; cursor: pointer;
-      transition: all 0.2s; font-family: inherit;
-    }
-    .btn-submit:hover { background: #D97706; transform: translateY(-2px); }
     .form-note { font-size: 0.82rem; color: #57534E; margin-top: 6px; }
 
     /* DIVIDER */
     .divider { border: none; border-top: 1px solid #E7E2D8; }
-    .divider-dark { border: none; border-top: 1px solid rgba(255,255,255,0.06); }
 
     /* FOOTER */
     footer {
@@ -288,7 +243,6 @@
       .hero { padding: 60px 0 50px; }
       section { padding: 60px 0; }
       .section-dark { padding: 60px 0; }
-      .form-row { flex-direction: column; }
     }
   </style>
 </head>
@@ -298,46 +252,46 @@
 <nav>
   <div class="container">
     <a class="nav-logo" href="#">Leadpath<span> AI</span></a>
-    <a class="btn-nav" href="#book-audit">Get a Free Revenue Audit</a>
+    <a class="btn-nav" href="#book-audit">Book a Free Audit</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="hero-badge">Built for Small & Mid-Sized Service Businesses</div>
-    <h1>Your best customers are<br><span class="accent">worth a lot more</span> than you're collecting.</h1>
-    <p>Most service businesses leave tens of thousands in revenue on the table every year — missed follow-ups, forgotten invoices, no review asks, cold quotes. Leadpath fixes that with lightweight automations built on the email and calendar tools you already use.</p>
+    <div class="hero-badge">Done-For-You Automation · Southern Ontario</div>
+    <h1>Stop losing money to tasks<br>you keep meaning to <span class="accent">automate.</span></h1>
+    <p>Leadpath AI builds done-for-you automations that follow up, collect, remind, and recover — so you can focus on running your business instead of chasing it.</p>
     <div class="hero-cta">
-      <a href="#book-audit" class="btn-primary">See Where You're Leaving Money →</a>
-      <a href="#modules" class="btn-secondary">See How It Works</a>
+      <a href="#book-audit" class="btn-primary">Book a Free Audit →</a>
+      <a href="#modules" class="btn-secondary">See the Modules</a>
     </div>
   </div>
 </section>
 
-<!-- WHERE THE MONEY IS -->
+<!-- WHERE THE MONEY IS LEAKING -->
 <section>
   <div class="container">
     <div class="section-header">
-      <h2>Where the money is <span class="accent">hiding</span></h2>
-      <p>These aren't hypothetical problems. They're happening in your business right now.</p>
+      <h2>Where the money is <span class="accent">leaking</span></h2>
+      <p>These aren't hypothetical problems. They're happening in your business right now — quietly, every week.</p>
     </div>
     <div class="money-grid">
       <div class="money-card">
-        <h3>📋 Quotes That Go Quiet</h3>
-        <p>You sent the quote. They said they'd think about it. Two weeks later — nothing. No follow-up ever happened. That job went to whoever called back first.</p>
+        <h3>💸 Invoices Going Unpaid</h3>
+        <p>You sent the invoice. They got busy. Nobody followed up. That money is still sitting there — or it's already gone. Chasing it manually is uncomfortable, inconsistent, and easy to put off.</p>
       </div>
       <div class="money-card">
-        <h3>⭐ Reviews You Never Asked For</h3>
-        <p>Happy customers don't leave reviews on their own. Without a prompt, most forget. Every missed review is future work that went to a competitor with more stars.</p>
+        <h3>📬 Quotes Going Cold</h3>
+        <p>You built the quote, sent it over, and waited. Three weeks later it's still open. One nudge at the right time would have closed it. Instead, they went with whoever called back first.</p>
       </div>
       <div class="money-card">
-        <h3>💸 Invoices Paid Late (or Not at All)</h3>
-        <p>Chasing payments is uncomfortable and time-consuming. Most businesses wait too long, follow up inconsistently, and write off amounts they shouldn't.</p>
+        <h3>⭐ Reviews Not Being Asked For</h3>
+        <p>Your last 10 customers were happy. None of them left a review. Because nobody asked. Happy customers don't self-report — they need a prompt at exactly the right moment.</p>
       </div>
       <div class="money-card">
         <h3>🔄 Past Customers Who Forgot You</h3>
-        <p>Someone you worked with 8 months ago just hired someone else — not because they didn't like you, but because you were out of sight, out of mind.</p>
+        <p>Someone you worked with 6 months ago just hired a competitor — not because they didn't like you, but because you went quiet. Out of sight, out of mind. Easily fixed.</p>
       </div>
     </div>
   </div>
@@ -349,52 +303,59 @@
 <section id="modules" class="section-dark">
   <div class="container">
     <div class="section-header">
-      <h2>Revenue modules — <span class="accent">pick what you need</span></h2>
-      <p>No bloated software subscription. Each module is a standalone automation built on your existing email and calendar. Buy one, see it work, add more.</p>
+      <h2>Eight modules. <span class="accent">One less thing to chase.</span></h2>
+      <p>Each module is a standalone automation built on the tools you already use. Buy one, see it work, add more. No new software. No technical knowledge required.</p>
     </div>
     <div class="modules">
       <div class="module-card featured">
-        <div class="module-icon">💰</div>
+        <div class="module-icon">💸</div>
         <div class="module-tag">Most Requested</div>
         <h3>AR Recovery — Get Paid Faster</h3>
-        <p>The moment an invoice goes overdue, automated follow-ups kick in. Right message, right tone, escalating at the right intervals. No awkward calls. No manual tracking.</p>
-        <div class="module-result">Clients typically recover outstanding AR 20–40% faster</div>
+        <p>Invoice overdue? The system follows up automatically — friendly at Day 1, firm at Day 7, urgent at Day 14 and 21. Right tone at every stage. No awkward calls. No manual tracking. You just get paid.</p>
+        <div class="module-result">Clients recover outstanding AR 20–40% faster</div>
+      </div>
+      <div class="module-card">
+        <div class="module-icon">📬</div>
+        <h3>Quote Follow-Up</h3>
+        <p>Quote sent and gone quiet? Automated nudges at Day 3, 7, and 14 keep the conversation alive without anyone lifting a finger. Close the jobs that would have just disappeared.</p>
+        <div class="module-result">1–2 extra closed jobs per month on average</div>
       </div>
       <div class="module-card">
         <div class="module-icon">⭐</div>
         <h3>Review Request Automation</h3>
-        <p>Job complete → customer gets a friendly, timed message asking for a Google review. Simple, automatic, and it works. One extra review a week compounds fast.</p>
+        <p>Job complete → customer gets a timed, friendly message with their direct Google review link. One extra review per week compounds fast. Most businesses never ask. The ones that do, win.</p>
         <div class="module-result">More 5-star reviews = more inbound calls</div>
-      </div>
-      <div class="module-card">
-        <div class="module-icon">📬</div>
-        <h3>Quote Follow-Up Sequences</h3>
-        <p>Quote sent → automated nudges go out at day 3, 7, and 14. Friendly, not pushy. Closes jobs that would have just gone quiet without anyone noticing.</p>
-        <div class="module-result">Recover 1–2 extra jobs per month on average</div>
       </div>
       <div class="module-card">
         <div class="module-icon">📅</div>
         <h3>Appointment & Visit Reminders</h3>
-        <p>Scheduled visit tomorrow? Customer gets a heads-up automatically — your name, the time, what to expect. Professional without the admin. No-shows drop significantly.</p>
-        <div class="module-result">Fewer no-shows, more professional experience</div>
+        <p>Appointment booked → reminder goes out 24h and 2h before. Your name, the time, what to expect. Professional without the admin overhead. No-shows drop significantly.</p>
+        <div class="module-result">20–40% fewer no-shows</div>
       </div>
       <div class="module-card">
         <div class="module-icon">🔄</div>
         <h3>Customer Reactivation</h3>
-        <p>Haven't heard from a past customer in 90 days? A well-timed "checking in" message goes out automatically. You'd be surprised how many just needed a nudge.</p>
-        <div class="module-result">Re-engage 10–20% of lapsed customers</div>
+        <p>Customer hasn't booked in 90+ days? A well-timed, personal-feeling message goes out automatically. Your best leads are the ones who already said yes once.</p>
+        <div class="module-result">10–20% of lapsed customers re-engage</div>
       </div>
       <div class="module-card">
         <div class="module-icon">🤝</div>
         <h3>Referral Ask</h3>
-        <p>Happy customer just wrapped up? A week later, they get a personal-feeling ask for a referral. Most businesses never ask. The ones that do, grow faster.</p>
+        <p>Happy customer just wrapped up? A week later, they get an ask for a referral at exactly the right moment. Most businesses never ask. The ones that do, grow faster.</p>
         <div class="module-result">Word-of-mouth revenue on autopilot</div>
       </div>
       <div class="module-card">
         <div class="module-icon">💬</div>
         <h3>24/7 Lead Capture Bot</h3>
-        <p>Visitors land on your site at 10pm. Nobody answers. They leave. A smart chat widget grabs their name, qualifies what they need, and books the call — while you sleep.</p>
+        <p>Someone lands on your site at 10pm ready to book. Your custom-branded chat widget qualifies them, captures their info, and books the call automatically. Wake up to new leads you didn't work for.</p>
         <div class="module-result">15–30% more leads from existing traffic</div>
+      </div>
+      <div class="module-card">
+        <div class="module-icon">🔍</div>
+        <h3>Smart Review — Anomaly Monitoring</h3>
+        <p>Connects to the data you already have and watches for patterns that fall outside your normal. Duplicate invoices. Payroll anomalies. Job cost overruns. No-show clusters. Plain-language digest delivered to your inbox. No dashboard to learn.</p>
+        <p style="margin-top: 10px; font-style: italic; font-size: 0.85rem;">"Here's what looked off yesterday, and why."</p>
+        <div class="module-result">Catch financial errors before they compound</div>
       </div>
     </div>
   </div>
@@ -406,24 +367,29 @@
 <section id="how-it-works">
   <div class="container">
     <div class="section-header">
-      <h2>How It Works</h2>
-      <p>We build it for you. You run it. No tech knowledge required.</p>
+      <h2>How it works</h2>
+      <p>We build it. You run it. No new software. No learning curve. Usually live within a week.</p>
     </div>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
-        <h3>Free Revenue Audit</h3>
-        <p>30-minute call. We look at your current workflow and identify exactly where you're leaving money on the table — with a dollar estimate attached to each gap.</p>
+        <h3>Free Audit (30 min)</h3>
+        <p>We map your current workflow and find exactly where time and money are leaking — with a dollar estimate attached to each gap. No pitch. Just clarity.</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <h3>We Build Your First Module</h3>
-        <p>We pick your highest-ROI automation and build it on top of your existing email and calendar tools. No new software to learn. Usually live within a week.</p>
+        <h3>One Credentials Call</h3>
+        <p>We connect to your existing tools (Jobber, QuickBooks, Gmail — whatever you use). Takes 30 minutes. You never have to touch the system again.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <h3>It Runs. You Earn.</h3>
-        <p>From day one, the module works in the background — sending reminders, chasing invoices, requesting reviews — while you focus on the work itself.</p>
+        <h3>We Build & Deploy</h3>
+        <p>Build takes 2–8 hours on our end. You review, approve, and go live. A check-in two weeks later to make sure everything's running clean.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>It Runs Itself</h3>
+        <p>Monthly retainer keeps it live, maintained, and optimized as your business grows. You focus on the work. The system handles the follow-up.</p>
       </div>
     </div>
   </div>
@@ -435,17 +401,20 @@
 <section>
   <div class="container">
     <div class="section-header">
-      <h2>Who We Work With</h2>
-      <p>Service and trade businesses who are great at what they do — and ready to stop leaving money behind.</p>
+      <h2>Who we work with</h2>
+      <p>Service businesses, trades, clinics, and professional service teams who are great at what they do — and ready to stop leaving money on the table.</p>
     </div>
     <div class="industries">
-      <span class="industry-tag">Contractors & Trades</span>
       <span class="industry-tag">HVAC & Plumbing</span>
+      <span class="industry-tag">Roofing & Electrical</span>
       <span class="industry-tag">Landscaping & Property Services</span>
-      <span class="industry-tag">Professional Services</span>
-      <span class="industry-tag">OEM & Light Manufacturing</span>
-      <span class="industry-tag">B2B Service Companies</span>
-      <span class="industry-tag">Field Service Businesses</span>
+      <span class="industry-tag">General Contracting</span>
+      <span class="industry-tag">Physiotherapy & Chiropractic</span>
+      <span class="industry-tag">Dental & Optometry</span>
+      <span class="industry-tag">MedSpa & Wellness</span>
+      <span class="industry-tag">Real Estate Agents & Teams</span>
+      <span class="industry-tag">Property Management</span>
+      <span class="industry-tag">Pest Control & Cleaning</span>
     </div>
   </div>
 </section>
@@ -456,57 +425,61 @@
 <section>
   <div class="container">
     <div class="section-header">
-      <h2>Pricing</h2>
-      <p>Flat-fee builds. No monthly subscriptions. No bloated software to maintain.</p>
+      <h2>Simple pricing. <span class="accent">No surprises.</span></h2>
+      <p>A one-time setup fee covers the build. A flat monthly keeps it running, maintained, and optimized. Cancel anytime.</p>
     </div>
     <div class="pricing">
       <div class="price-card">
         <div class="price-label">Start Here</div>
-        <h3>Revenue Audit</h3>
-        <div class="price-amount">Free <span>this month</span></div>
+        <h3>Starter Bundle</h3>
+        <div class="price-amount">$597 <span>setup</span></div>
+        <div class="price-monthly">then $127/mo</div>
         <ul>
-          <li>30-minute discovery call</li>
-          <li>3+ revenue gaps identified</li>
-          <li>Dollar estimate on each gap</li>
-          <li>No commitment required</li>
+          <li>Quote Follow-Up</li>
+          <li>Review Request Automation</li>
+          <li>Built on your existing tools</li>
+          <li>2-week check-in included</li>
         </ul>
-        <a href="#book-audit" class="btn-price">Book Audit</a>
+        <a href="#book-audit" class="btn-price">Get Started</a>
       </div>
       <div class="price-card featured">
         <div class="price-label">Most Popular</div>
-        <h3>Single Module Build</h3>
-        <div class="price-amount">$1,500–$2,500 <span>flat fee</span></div>
+        <h3>Revenue Bundle</h3>
+        <div class="price-amount">$997 <span>setup</span></div>
+        <div class="price-monthly" style="color: #A8A29E;">then $197/mo</div>
         <ul>
-          <li>One automation built & deployed</li>
-          <li>Works on your existing tools</li>
-          <li>Full testing & documentation</li>
-          <li>30-day support included</li>
+          <li>AR Recovery</li>
+          <li>Quote Follow-Up</li>
+          <li>Review Request Automation</li>
+          <li>Full build + ongoing support</li>
         </ul>
         <a href="#book-audit" class="btn-price">Get Started</a>
       </div>
       <div class="price-card">
-        <div class="price-label">Best Value</div>
-        <h3>Module Bundle</h3>
-        <div class="price-amount">$4,000–$7,500 <span>flat fee</span></div>
+        <div class="price-label">Full Coverage</div>
+        <h3>Full Suite</h3>
+        <div class="price-amount">$2,497 <span>setup</span></div>
+        <div class="price-monthly">then $497/mo</div>
         <ul>
-          <li>3–4 modules built together</li>
-          <li>Full audit included</li>
-          <li>Priority build & support</li>
-          <li>60-day support included</li>
+          <li>All 8 modules</li>
+          <li>Priority build & deployment</li>
+          <li>Dedicated support</li>
+          <li>First to access new modules</li>
         </ul>
         <a href="#book-audit" class="btn-price">Get Started</a>
       </div>
       <div class="price-card">
-        <div class="price-label">Ongoing Partner</div>
-        <h3>Monthly Retainer</h3>
-        <div class="price-amount">$1,500–$3,500 <span>/month</span></div>
+        <div class="price-label">Build Your Own</div>
+        <h3>Individual Modules</h3>
+        <div class="price-amount">From $247 <span>setup</span></div>
+        <div class="price-monthly">from $47/mo per module</div>
         <ul>
-          <li>New modules as you grow</li>
-          <li>Ongoing maintenance & tuning</li>
-          <li>Priority access & support</li>
-          <li>Early access to new AI tools</li>
+          <li>Pick exactly what you need</li>
+          <li>Add modules over time</li>
+          <li>Same build quality</li>
+          <li>No minimum commitment</li>
         </ul>
-        <a href="#book-audit" class="btn-price">Learn More</a>
+        <a href="#book-audit" class="btn-price">Talk to Us</a>
       </div>
     </div>
   </div>
@@ -515,17 +488,16 @@
 <!-- BOOK AUDIT CTA -->
 <section class="cta-section" id="book-audit">
   <div class="container">
-    <h2>Book Your Free <span class="accent">Revenue Audit</span></h2>
-    <p>Pick a time that works for you. 30 minutes — we'll show you exactly where your business is leaving money and what fixing it is worth.</p>
+    <h2>Book your free <span class="accent">automation audit</span></h2>
+    <p>30 minutes. We'll show you exactly where your business is leaking time and money — and what fixing it is worth.</p>
     <div style="margin: 0 auto; max-width: 700px;">
-      <!-- Calendly inline widget -->
       <div class="calendly-inline-widget"
            data-url="https://calendly.com/leadpathai?hide_gdpr_banner=1&background_color=1C1917&text_color=F5F0E8&primary_color=F59E0B"
            style="min-width:280px; height:700px;">
       </div>
       <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </div>
-    <p class="form-note" style="margin-top: 16px;">No sales pressure · 30 minutes · Response same day</p>
+    <p class="form-note" style="margin-top: 16px;">No pitch · No obligation · 30 minutes · Response same day</p>
   </div>
 </section>
 
@@ -533,14 +505,14 @@
 <footer>
   <div class="container">
     <div class="footer-links">
-      <a href="https://twitter.com/leadpath_ca">X / Twitter</a>
       <a href="https://www.linkedin.com/company/leadpathstudio">LinkedIn</a>
       <a href="mailto:hello@leadpath.ca">hello@leadpath.ca</a>
+      <a href="/privacy.html">Privacy</a>
     </div>
     <p>© 2026 Leadpath AI · Waterloo, Ontario, Canada</p>
   </div>
 </footer>
 
-  <script src="https://tools.leadpath.ca/chatbot.js"></script>
+<script src="https://tools.leadpath.ca/chatbot.js"></script>
 </body>
 </html>
