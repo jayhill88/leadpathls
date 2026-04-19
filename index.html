@@ -612,7 +612,7 @@
   <div class="container">
     <div class="footer-links">
       <a href="https://www.linkedin.com/company/leadpathstudio">LinkedIn</a>
-      <a href="mailto:hello@leadpath.ca">hello@leadpath.ca</a>
+      <a id="contact-link" href="#">Contact</a>
       <a href="/privacy.html">Privacy</a>
     </div>
     <p>© 2026 Leadpath AI · Waterloo, Ontario, Canada</p>
@@ -620,5 +620,13 @@
 </footer>
 
 <script src="https://tools.leadpath.ca/chatbot.js"></script>
+<script>
+  // Email obfuscation — assembled at runtime, invisible to scrapers
+  (function() {
+    var u = 'jason', d = 'leadpath.ca';
+    var el = document.getElementById('contact-link');
+    if (el) { el.href = 'mailto:' + u + '@' + d; el.textContent = u + '@' + d; }
+  })();
+</script>
 </body>
 </html>
